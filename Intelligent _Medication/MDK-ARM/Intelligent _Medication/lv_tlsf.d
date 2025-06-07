@@ -1,0 +1,13 @@
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_tlsf.c
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+intelligent _medication\lv_tlsf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+intelligent _medication\lv_tlsf.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+intelligent _medication\lv_tlsf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\limits.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_tlsf.h
+intelligent _medication\lv_tlsf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_mem.h
+intelligent _medication\lv_tlsf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_types.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_log.h
+intelligent _medication\lv_tlsf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_assert.h

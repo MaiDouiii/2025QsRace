@@ -1,0 +1,6 @@
+#ifndef __my_rtc_task_H__
+#define __my_rtc_task_H__
+
+#include "bsp_system.h"
+
+#endif

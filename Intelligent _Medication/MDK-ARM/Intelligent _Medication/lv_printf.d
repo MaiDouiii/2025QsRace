@@ -1,0 +1,10 @@
+intelligent _medication\lv_printf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_printf.c
+intelligent _medication\lv_printf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_printf.h
+intelligent _medication\lv_printf.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
+intelligent _medication\lv_printf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_printf.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
+intelligent _medication\lv_printf.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
+intelligent _medication\lv_printf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_printf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_printf.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_types.h
+intelligent _medication\lv_printf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h

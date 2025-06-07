@@ -1,0 +1,12 @@
+{
+  "C_Cpp.errorSquiggles": "disabled",
+  "files.associations": {
+    "ui_helpers.h": "c",
+    "my_key_task.h": "c",
+    "my_task_init.h": "c",
+    "my_motor_task.h": "c",
+    "freertos.h": "c",
+    "motor.h": "c",
+    "lv_port_indev_template.h": "c"
+  }
+}
