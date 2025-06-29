@@ -1,8 +1,8 @@
 intelligent _medication\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
-intelligent _medication\heap_4.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+intelligent _medication\heap_4.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 intelligent _medication\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\heap_4.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\heap_4.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\heap_4.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\heap_4.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\heap_4.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

@@ -1,6 +1,6 @@
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\lv_font_loader.c
-intelligent _medication\lv_font_loader.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-intelligent _medication\lv_font_loader.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\lv_font_loader.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_font_loader.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../lvgl.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../lvgl.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_log.h
@@ -11,13 +11,13 @@ intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../sr
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_timer.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_math.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_mem.h
-intelligent _medication\lv_font_loader.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\lv_font_loader.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_font_loader.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_font_loader.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_async.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_anim_timeline.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_anim.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/misc/lv_printf.h
-intelligent _medication\lv_font_loader.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_font_loader.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/hal/lv_hal.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/hal/lv_hal_disp.h
 intelligent _medication\lv_font_loader.o: ..\APP\LVGL\GUI\lvgl\src\font\../../src/hal/lv_hal.h

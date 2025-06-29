@@ -1,13 +1,13 @@
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\lv_label.c
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\lv_label.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../lv_conf_internal.h
-intelligent _medication\lv_label.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_label.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../lv_conf_kconfig.h
 intelligent _medication\lv_label.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
-intelligent _medication\lv_label.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_label.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/lv_obj.h
-intelligent _medication\lv_label.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\lv_label.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\lv_label.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_label.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_style.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/../font/lv_font.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/../font/lv_symbol_def.h
@@ -17,7 +17,7 @@ intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_log.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_types.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_mem.h
-intelligent _medication\lv_label.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_label.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_math.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_anim.h
 intelligent _medication\lv_label.o: ..\APP\LVGL\GUI\lvgl\src\widgets\../core/../misc/lv_txt.h

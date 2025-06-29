@@ -1,9 +1,9 @@
 intelligent _medication\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/tasks.c
-intelligent _medication\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
-intelligent _medication\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\tasks.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+intelligent _medication\tasks.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\tasks.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\tasks.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\tasks.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\tasks.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\tasks.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

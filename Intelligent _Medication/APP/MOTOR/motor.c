@@ -1,5 +1,6 @@
 #include "motor.h"
 
+uint8_t motor_stop_flag = 0;
 uint8_t motorBottom_turn = 0, motorTop_turn = 0;
 uint8_t zero_motor1_speed_buffer[] = {0x01, 0x35, 0x00, 0x00, 0x00, 0x6B};
 uint8_t zero_motor2_speed_buffer[] = {0x02, 0x35, 0x00, 0x00, 0x00, 0x6B};
@@ -96,9 +97,9 @@ void motor_get_speed(uint8_t addr)
   cmd[0] = addr; // 地址
   cmd[1] = 0x35;
   cmd[2] = 0x6B;
-
+	
   HAL_UART_Transmit(&huart2, (uint8_t *)cmd, 3, 10);
-  HAL_Delay(5);
+	vTaskDelay(150);
 }
 
 /**
@@ -115,38 +116,6 @@ void motor_calibration(uint8_t addr)
   cmd[3] = 0x6B;
   HAL_UART_Transmit(&huart2, (uint8_t *)cmd, 4, 10);
 }
-
-// void motor_move_mode1()
-//{
-//	motor_pos_control(2,1,500,0,32000,0,0);
-//	HAL_Delay(5);
-//	while(speed_flag == 0)
-//	{
-//		motor_get_speed(0x02);
-//	}speed_flag = 0;
-//	motor_pos_control(1,1,500,0,32000,0,0);
-//	HAL_Delay(5);
-//	while(speed_flag == 0)
-//	{
-//		motor_get_speed(0x01);
-//	}speed_flag = 0;
-// }
-
-// void motor_move_mode2()
-//{
-//	motor_pos_control(1,0,500,0,32000,0,0);
-//	HAL_Delay(5);
-//	while(speed_flag == 0)
-//	{
-//		motor_get_speed(0x01);
-//	}speed_flag = 0;
-//	motor_pos_control(2,0,500,0,32000,0,0);
-//	HAL_Delay(5);
-//	while(speed_flag == 0)
-//	{
-//		motor_get_speed(0x02);
-//	}speed_flag = 0;
-// }
 
 void motor_init()
 {
@@ -175,12 +144,20 @@ void motor_init()
 
 void motor_take_control()
 {
-  motor_pos_control(motor_top, motor_top_down, 800, 0, 96000, 0, 0);         // 滑台下移
-  while (HAL_GPIO_ReadPin(TOP_DOWN_GPIO_Port, TOP_DOWN_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
-  {
-    HAL_Delay(1);
-  }
-  motor_Stop_Now(motor_top, 0);
+	uint8_t time_check = 0;
+  motor_pos_control(motor_top, motor_top_down, 800, 0, 45000, 0, 0);         // 滑台下移
+	vTaskDelay(200);
+	while(motor_stop_flag == 0)
+	{
+		motor_get_speed(motor_top);
+		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		{
+			time_check = 0;
+			break;
+		}
+	}
+	time_check = 0;
+	motor_stop_flag = 0;
   HAL_Delay(1);
   HAL_GPIO_WritePin(down_en_GPIO_Port, down_en_Pin, GPIO_PIN_SET);
   HAL_Delay(1);
@@ -189,33 +166,93 @@ void motor_take_control()
   vTaskDelay(700); // 延时700ms
 
   motor_pos_control(motor_top, motor_top_up, 800, 0, 96000, 0, 0);       // 滑台上移
+	vTaskDelay(200);
   while (HAL_GPIO_ReadPin(TOP_UP_GPIO_Port, TOP_UP_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
   {
-    HAL_Delay(1);
+    HAL_Delay(5);
   }
   motor_Stop_Now(motor_top, 0);
-  HAL_Delay(2); // 延时2ms
+  vTaskDelay(100);
 
-  motor_pos_control(motor_bottom, motor_bottom_forward, 800, 0, 96000, 0, 0);            // 滑台左移动
-  while (HAL_GPIO_ReadPin(BOTTOM_FORWARD_GPIO_Port, BOTTOM_FORWARD_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
-  {
-    HAL_Delay(1);
+  motor_pos_control(motor_bottom, motor_bottom_forward, 800, 0, 46000, 0, 0);            // 滑台左移动
+	vTaskDelay(200);
+	while(motor_stop_flag == 0)
+	{
+    motor_get_speed(motor_bottom);
+		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		{
+			time_check = 0;
+			break;
+		}
   }
-  motor_Stop_Now(motor_bottom, 0);
-  HAL_Delay(2); // 延时2ms
-
-  motor_pos_control(motor_top, motor_top_down, 800, 0, 96000, 0, 0);         // 滑台下移
-  while (HAL_GPIO_ReadPin(TOP_DOWN_GPIO_Port, TOP_DOWN_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
-  {
-    HAL_Delay(1);
-  }
-  motor_Stop_Now(motor_top, 0);
-  HAL_Delay(1);
-  HAL_GPIO_WritePin(Relay_GPIO_Port, Relay_Pin, GPIO_PIN_RESET); // 继电器断开
-  HAL_Delay(1);
-  motor_init(); // 复位电机
+	time_check = 0;
+	motor_stop_flag = 0;
   HAL_Delay(50);
+
+  motor_pos_control(motor_top, motor_top_down, 800, 0, 45000, 0, 0);         // 滑台下移
+	vTaskDelay(200);
+	while(motor_stop_flag == 0)
+	{
+		motor_get_speed(motor_top);
+		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		{
+			time_check = 0;
+			break;
+		}
+	}
+	time_check = 0;
+	motor_stop_flag = 0;
+  HAL_Delay(50);
+  HAL_GPIO_WritePin(Relay_GPIO_Port, Relay_Pin, GPIO_PIN_RESET); // 继电器断开
+  HAL_Delay(10);
+  motor_init(); // 复位电机
+  HAL_Delay(100);
+	HAL_GPIO_WritePin(down_en_GPIO_Port, down_en_Pin, GPIO_PIN_RESET);
 }
+
+//void motor_take_control()
+//{
+//  motor_pos_control(motor_top, motor_top_down, 800, 0, 96000, 0, 0);         // 滑台下移
+//  while (HAL_GPIO_ReadPin(TOP_DOWN_GPIO_Port, TOP_DOWN_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
+//  {
+//    HAL_Delay(1);
+//  }
+//  motor_Stop_Now(motor_top, 0);
+//  HAL_Delay(1);
+//  HAL_GPIO_WritePin(down_en_GPIO_Port, down_en_Pin, GPIO_PIN_SET);
+//  HAL_Delay(1);
+//  HAL_GPIO_WritePin(Relay_GPIO_Port, Relay_Pin, GPIO_PIN_SET); // 继电器吸合
+
+//  vTaskDelay(700); // 延时700ms
+
+//  motor_pos_control(motor_top, motor_top_up, 800, 0, 96000, 0, 0);       // 滑台上移
+//  while (HAL_GPIO_ReadPin(TOP_UP_GPIO_Port, TOP_UP_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
+//  {
+//    HAL_Delay(1);
+//  }
+//  motor_Stop_Now(motor_top, 0);
+//  HAL_Delay(2); // 延时2ms
+
+//  motor_pos_control(motor_bottom, motor_bottom_forward, 800, 0, 96000, 0, 0);            // 滑台左移动
+//  while (HAL_GPIO_ReadPin(BOTTOM_FORWARD_GPIO_Port, BOTTOM_FORWARD_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
+//  {
+//    HAL_Delay(1);
+//  }
+//  motor_Stop_Now(motor_bottom, 0);
+//  HAL_Delay(2); // 延时2ms
+
+//  motor_pos_control(motor_top, motor_top_down, 800, 0, 96000, 0, 0);         // 滑台下移
+//  while (HAL_GPIO_ReadPin(TOP_DOWN_GPIO_Port, TOP_DOWN_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
+//  {
+//    HAL_Delay(1);
+//  }
+//  motor_Stop_Now(motor_top, 0);
+//  HAL_Delay(1);
+//  HAL_GPIO_WritePin(Relay_GPIO_Port, Relay_Pin, GPIO_PIN_RESET); // 继电器断开
+//  HAL_Delay(1);
+//  motor_init(); // 复位电机
+//  HAL_Delay(50);
+//}
 
 int abs(int l)
 {

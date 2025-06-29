@@ -1,8 +1,8 @@
 intelligent _medication\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-intelligent _medication\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+intelligent _medication\event_groups.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 intelligent _medication\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\event_groups.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\event_groups.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\event_groups.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\event_groups.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

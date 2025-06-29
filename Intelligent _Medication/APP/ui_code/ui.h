@@ -18,11 +18,16 @@ extern "C" {
 
 // SCREEN: ui_Main
 void ui_Main_screen_init(void);
+void ui_login_event(lv_event_t * e);
 extern lv_obj_t * ui_Main;
 extern lv_obj_t * ui_Panel1;
 extern lv_obj_t * ui_TimeLabel;
 extern lv_obj_t * ui_DataLabel;
-extern lv_obj_t * ui_Label4;
+extern lv_obj_t * ui_Data;
+extern lv_obj_t * ui_Image15;
+extern lv_obj_t * ui_Label2;
+extern lv_obj_t * ui_Temp;
+extern lv_obj_t * ui_Humidity;
 extern lv_obj_t * ui_Panel2;
 extern lv_obj_t * ui_MainLabel;
 extern lv_obj_t * ui_Image1;
@@ -43,7 +48,6 @@ void ui_event_WifiScreen(lv_event_t * e);
 extern lv_obj_t * ui_WifiScreen;
 extern lv_obj_t * ui_Image6;
 extern lv_obj_t * ui_Label7;
-void ui_event_UserScreen(lv_event_t * e);
 extern lv_obj_t * ui_UserScreen;
 extern lv_obj_t * ui_Image7;
 extern lv_obj_t * ui_Label8;
@@ -59,6 +63,13 @@ extern lv_obj_t * ui_Content;
 void ui_event_ContentBack(lv_event_t * e);
 extern lv_obj_t * ui_ContentBack;
 extern lv_obj_t * ui_Image4;
+extern lv_obj_t * ui_Panel6;
+extern lv_obj_t * ui_yh1;
+extern lv_obj_t * ui_yh2;
+extern lv_obj_t * ui_yh3;
+extern lv_obj_t * ui_yh4;
+extern lv_obj_t * ui_yh5;
+extern lv_obj_t * ui_yh6;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_WIFI
@@ -92,23 +103,29 @@ extern lv_obj_t * ui_Log;
 void ui_event_LogBack(lv_event_t * e);
 extern lv_obj_t * ui_LogBack;
 extern lv_obj_t * ui_Image12;
+extern lv_obj_t * ui_Panel10;
+extern lv_obj_t * ui_Button5;
+extern lv_obj_t * ui_Label12;
+extern lv_obj_t * ui_Log1;
+extern lv_obj_t * ui_Log2;
+extern lv_obj_t * ui_Log3;
+extern lv_obj_t * ui_Log4;
+extern lv_obj_t * ui_Log5;
+extern lv_obj_t * ui_Log6;
+extern lv_obj_t * ui_Log7;
+extern lv_obj_t * ui_Log8;
+extern lv_obj_t * ui_Log9;
+extern lv_obj_t * ui_Log10;
 // CUSTOM VARIABLES
 
-// SCREEN: ui_Turn
-void ui_Turn_screen_init(void);
-extern lv_obj_t * ui_Turn;
+// SCREEN: ui_Show
+void ui_Show_screen_init(void);
+extern lv_obj_t * ui_Show;
 void ui_event_Button12(lv_event_t * e);
-void ui_event_Mottor(lv_event_t * e);
 extern lv_obj_t * ui_Button12;
 extern lv_obj_t * ui_SDcardBack;
-extern lv_obj_t * ui_Mottor1;
-extern lv_obj_t * ui_Addr1;
-extern lv_obj_t * ui_Mottor2;
-extern lv_obj_t * ui_Addr2;
-extern lv_obj_t * ui_Turn1;
-extern lv_obj_t * ui_Addr3;
-extern lv_obj_t * ui_Turn2;
-extern lv_obj_t * ui_Addr5;
+extern lv_obj_t * ui_Location;
+extern lv_obj_t * ui_explain;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Setting
@@ -128,8 +145,14 @@ extern lv_obj_t * ui_Image13;
 extern lv_obj_t * ui_Label1;
 void ui_event_User1Time3(lv_event_t * e);
 extern lv_obj_t * ui_User1Time3;
+void ui_event_User1eat1(lv_event_t * e);
+extern lv_obj_t * ui_User1eat1;
+void ui_event_User1eat3(lv_event_t * e);
+extern lv_obj_t * ui_User1eat3;
+void ui_event_User1eat2(lv_event_t * e);
+extern lv_obj_t * ui_User1eat2;
 extern lv_obj_t * ui_Panel7;
-extern lv_obj_t * ui_User1Set2;
+extern lv_obj_t * ui_User2Set;
 extern lv_obj_t * ui_User1Label2;
 extern lv_obj_t * ui_Image16;
 extern lv_obj_t * ui_Label10;
@@ -139,8 +162,14 @@ void ui_event_User2Time2(lv_event_t * e);
 extern lv_obj_t * ui_User2Time2;
 void ui_event_User2Time3(lv_event_t * e);
 extern lv_obj_t * ui_User2Time3;
+void ui_event_User2eat1(lv_event_t * e);
+extern lv_obj_t * ui_User2eat1;
+void ui_event_User2eat2(lv_event_t * e);
+extern lv_obj_t * ui_User2eat2;
+void ui_event_User2eat3(lv_event_t * e);
+extern lv_obj_t * ui_User2eat3;
 extern lv_obj_t * ui_Panel8;
-extern lv_obj_t * ui_User1Set3;
+extern lv_obj_t * ui_User3Set;
 extern lv_obj_t * ui_User1Label3;
 extern lv_obj_t * ui_Image17;
 extern lv_obj_t * ui_Label15;
@@ -150,7 +179,14 @@ void ui_event_User3Time2(lv_event_t * e);
 extern lv_obj_t * ui_User3Time2;
 void ui_event_User3Time3(lv_event_t * e);
 extern lv_obj_t * ui_User3Time3;
+void ui_event_Usere3eat1(lv_event_t * e);
+extern lv_obj_t * ui_User3eat1;
+void ui_event_User3eat2(lv_event_t * e);
+extern lv_obj_t * ui_User3eat2;
+void ui_event_User3eat3(lv_event_t * e);
+extern lv_obj_t * ui_User3eat3;
 extern lv_obj_t * ui_TimeKeyboard;
+void ui_event_set(lv_event_t * e);
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -158,12 +194,13 @@ extern lv_obj_t * ui_TimeKeyboard;
 extern lv_obj_t * ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
+LV_IMG_DECLARE(ui_img_944254084);    // assets/天气.png
 LV_IMG_DECLARE(ui_img_1649269564);    // assets/WIFI连接成功.png
 LV_IMG_DECLARE(ui_img_1638619773);    // assets/电量.png
 LV_IMG_DECLARE(ui_img_1761980177);    // assets/调药_1.png
 LV_IMG_DECLARE(ui_img_contents_png);    // assets/contents.png
-LV_IMG_DECLARE(ui_img_2088777935);    // assets/转动.png
-LV_IMG_DECLARE(ui_img_719842935);    // assets/WIFI连接.png
+LV_IMG_DECLARE(ui_img_204610073);    // assets/说明.png
+LV_IMG_DECLARE(ui_img_wifi_png);    // assets/WIFI.png
 LV_IMG_DECLARE(ui_img_67163344);    // assets/用户信息.png
 LV_IMG_DECLARE(ui_img_2141527451);    // assets/日志.png
 LV_IMG_DECLARE(ui_img_1609717271);    // assets/返回.png

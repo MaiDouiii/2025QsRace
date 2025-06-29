@@ -44,17 +44,53 @@ void ui_Main_screen_init(void)
     lv_obj_set_style_text_opa(ui_DataLabel, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_DataLabel, &lv_font_montserrat_26, LV_PART_MAIN | LV_STATE_DEFAULT);
 
-    ui_Label4 = lv_label_create(ui_Panel1);
-    lv_obj_set_width(ui_Label4, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label4, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Label4, 117);
-    lv_obj_set_y(ui_Label4, 0);
-    lv_obj_set_align(ui_Label4, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label4,
-                      "用户1-下次服药时间      20:00\n\n用户2-下次服药时间      18:00\n\n用户3-下次服药时间      19:00");
-    lv_obj_set_style_text_color(ui_Label4, lv_color_hex(0x090606), LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_opa(ui_Label4, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
-    lv_obj_set_style_text_font(ui_Label4, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+    ui_Data = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_Data, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Data, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Data, 202);
+    lv_obj_set_y(ui_Data, -26);
+    lv_obj_set_align(ui_Data, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Data, "天气：晴");
+    lv_obj_set_style_text_color(ui_Data, lv_color_hex(0x090606), LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_opa(ui_Data, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_obj_set_style_text_font(ui_Data, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Image15 = lv_img_create(ui_Panel1);
+    lv_img_set_src(ui_Image15, &ui_img_944254084);
+    lv_obj_set_width(ui_Image15, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Image15, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Image15, 205);
+    lv_obj_set_y(ui_Image15, 18);
+    lv_obj_set_align(ui_Image15, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_Image15, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
+    lv_obj_clear_flag(ui_Image15, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_Label2 = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_Label2, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label2, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label2, 34);
+    lv_obj_set_y(ui_Label2, -29);
+    lv_obj_set_align(ui_Label2, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label2, "药箱内部状态");
+    lv_obj_set_style_text_font(ui_Label2, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Temp = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_Temp, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Temp, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Temp, 36);
+    lv_obj_set_y(ui_Temp, 1);
+    lv_obj_set_align(ui_Temp, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Temp, "当前温度：25℃");
+    lv_obj_set_style_text_font(ui_Temp, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Humidity = lv_label_create(ui_Panel1);
+    lv_obj_set_width(ui_Humidity, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Humidity, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Humidity, 37);
+    lv_obj_set_y(ui_Humidity, 30);
+    lv_obj_set_align(ui_Humidity, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Humidity, "当前湿度：20％");
+    lv_obj_set_style_text_font(ui_Humidity, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Panel2 = lv_obj_create(ui_Main);
     lv_obj_set_width(ui_Panel2, 802);
@@ -131,7 +167,7 @@ void ui_Main_screen_init(void)
     lv_obj_set_x(ui_Label3, -2);
     lv_obj_set_y(ui_Label3, 37);
     lv_obj_set_align(ui_Label3, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label3, "调药");
+    lv_label_set_text(ui_Label3, "服药设置");
     lv_obj_set_style_text_color(ui_Label3, lv_color_hex(0x201810), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label3, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_Label3, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -185,7 +221,7 @@ void ui_Main_screen_init(void)
     lv_obj_set_style_shadow_opa(ui_SDCardScreen, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Image5 = lv_img_create(ui_SDCardScreen);
-    lv_img_set_src(ui_Image5, &ui_img_2088777935);
+    lv_img_set_src(ui_Image5, &ui_img_204610073);
     lv_obj_set_width(ui_Image5, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Image5, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Image5, 0);
@@ -201,7 +237,7 @@ void ui_Main_screen_init(void)
     lv_obj_set_x(ui_Label6, 0);
     lv_obj_set_y(ui_Label6, 37);
     lv_obj_set_align(ui_Label6, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label6, "药盘转动");
+    lv_label_set_text(ui_Label6, "使用说明");
     lv_obj_set_style_text_color(ui_Label6, lv_color_hex(0x201810), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_opa(ui_Label6, 255, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_text_font(ui_Label6, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -220,7 +256,7 @@ void ui_Main_screen_init(void)
     lv_obj_set_style_shadow_opa(ui_WifiScreen, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_Image6 = lv_img_create(ui_WifiScreen);
-    lv_img_set_src(ui_Image6, &ui_img_719842935);
+    lv_img_set_src(ui_Image6, &ui_img_wifi_png);
     lv_obj_set_width(ui_Image6, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Image6, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_Image6, -2);
@@ -258,7 +294,7 @@ void ui_Main_screen_init(void)
     lv_img_set_src(ui_Image7, &ui_img_67163344);
     lv_obj_set_width(ui_Image7, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_Image7, LV_SIZE_CONTENT);    /// 1
-    lv_obj_set_x(ui_Image7, -5);
+    lv_obj_set_x(ui_Image7, -8);
     lv_obj_set_y(ui_Image7, -7);
     lv_obj_set_align(ui_Image7, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_Image7, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
@@ -315,7 +351,6 @@ void ui_Main_screen_init(void)
     lv_obj_add_event_cb(ui_ConnentScreen, ui_event_ConnentScreen, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_SDCardScreen, ui_event_SDCardScreen, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_WifiScreen, ui_event_WifiScreen, LV_EVENT_ALL, NULL);
-    lv_obj_add_event_cb(ui_UserScreen, ui_event_UserScreen, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_LogScreen, ui_event_LogScreen, LV_EVENT_ALL, NULL);
 
 }

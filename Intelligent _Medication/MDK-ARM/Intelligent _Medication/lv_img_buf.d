@@ -1,11 +1,11 @@
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\lv_img_buf.c
-intelligent _medication\lv_img_buf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\lv_img_buf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_img_buf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_img_buf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\lv_img_buf.h
-intelligent _medication\lv_img_buf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\lv_img_buf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_color.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/../lv_conf_internal.h
-intelligent _medication\lv_img_buf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_img_buf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/../lv_conf_kconfig.h
 intelligent _medication\lv_img_buf.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_assert.h
@@ -22,7 +22,7 @@ intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/../f
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/../font/lv_symbol_def.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_anim.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_txt.h
-intelligent _medication\lv_img_buf.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_img_buf.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_printf.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_bidi.h
 intelligent _medication\lv_img_buf.o: ..\APP\LVGL\GUI\lvgl\src\draw\../misc/lv_style_gen.h

@@ -2,8 +2,8 @@ intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\lv_disp.c
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\lv_disp.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/lv_hal.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/lv_hal_disp.h
-intelligent _medication\lv_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-intelligent _medication\lv_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\lv_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/lv_hal.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/lv_draw.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../lv_conf_internal.h
@@ -11,7 +11,7 @@ intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/
 intelligent _medication\lv_disp.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_style.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/../font/lv_font.h
-intelligent _medication\lv_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/../font/lv_symbol_def.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/../font/../misc/lv_area.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_color.h
@@ -19,11 +19,11 @@ intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_log.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_types.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_mem.h
-intelligent _medication\lv_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_math.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_anim.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_txt.h
-intelligent _medication\lv_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_printf.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_bidi.h
 intelligent _medication\lv_disp.o: ..\APP\LVGL\GUI\lvgl\src\core\../hal/../draw/../misc/lv_style_gen.h

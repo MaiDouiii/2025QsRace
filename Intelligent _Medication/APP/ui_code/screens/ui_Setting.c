@@ -72,7 +72,7 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User1Time1, 121);
     lv_obj_set_height(ui_User1Time1, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User1Time1, -151);
-    lv_obj_set_y(ui_User1Time1, 0);
+    lv_obj_set_y(ui_User1Time1, -20);
     lv_obj_set_align(ui_User1Time1, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User1Time1, 10);
     lv_textarea_set_placeholder_text(ui_User1Time1, "Time1");
@@ -82,7 +82,7 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User1Time2, 121);
     lv_obj_set_height(ui_User1Time2, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User1Time2, 4);
-    lv_obj_set_y(ui_User1Time2, 0);
+    lv_obj_set_y(ui_User1Time2, -20);
     lv_obj_set_align(ui_User1Time2, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User1Time2, 10);
     lv_textarea_set_placeholder_text(ui_User1Time2, "Time2");
@@ -104,17 +104,48 @@ void ui_Setting_screen_init(void)
     lv_obj_set_x(ui_Label1, -274);
     lv_obj_set_y(ui_Label1, 29);
     lv_obj_set_align(ui_Label1, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label1, "User1");
+    lv_label_set_text(ui_Label1, "用户1");
+    lv_obj_set_style_text_font(ui_Label1, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_User1Time3 = lv_textarea_create(ui_Panel5);
     lv_obj_set_width(ui_User1Time3, 121);
     lv_obj_set_height(ui_User1Time3, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User1Time3, 159);
-    lv_obj_set_y(ui_User1Time3, 0);
+    lv_obj_set_y(ui_User1Time3, -20);
     lv_obj_set_align(ui_User1Time3, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User1Time3, 10);
     lv_textarea_set_placeholder_text(ui_User1Time3, "Time3");
     lv_textarea_set_one_line(ui_User1Time3, true);
+
+    ui_User1eat1 = lv_textarea_create(ui_Panel5);
+    lv_obj_set_width(ui_User1eat1, 121);
+    lv_obj_set_height(ui_User1eat1, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User1eat1, -151);
+    lv_obj_set_y(ui_User1eat1, 25);
+    lv_obj_set_align(ui_User1eat1, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User1eat1, 20);
+    lv_textarea_set_placeholder_text(ui_User1eat1, "Eat1");
+    lv_textarea_set_one_line(ui_User1eat1, true);
+
+    ui_User1eat3 = lv_textarea_create(ui_Panel5);
+    lv_obj_set_width(ui_User1eat3, 121);
+    lv_obj_set_height(ui_User1eat3, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User1eat3, 159);
+    lv_obj_set_y(ui_User1eat3, 25);
+    lv_obj_set_align(ui_User1eat3, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User1eat3, 20);
+    lv_textarea_set_placeholder_text(ui_User1eat3, "Eat3");
+    lv_textarea_set_one_line(ui_User1eat3, true);
+
+    ui_User1eat2 = lv_textarea_create(ui_Panel5);
+    lv_obj_set_width(ui_User1eat2, 121);
+    lv_obj_set_height(ui_User1eat2, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User1eat2, 4);
+    lv_obj_set_y(ui_User1eat2, 25);
+    lv_obj_set_align(ui_User1eat2, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User1eat2, 20);
+    lv_textarea_set_placeholder_text(ui_User1eat2, "Eat2");
+    lv_textarea_set_one_line(ui_User1eat2, true);
 
     ui_Panel7 = lv_obj_create(ui_Setting);
     lv_obj_set_width(ui_Panel7, 662);
@@ -132,16 +163,16 @@ void ui_Setting_screen_init(void)
     lv_obj_set_style_shadow_color(ui_Panel7, lv_color_hex(0x000000), LV_PART_SCROLLBAR | LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_opa(ui_Panel7, 255, LV_PART_SCROLLBAR | LV_STATE_DEFAULT);
 
-    ui_User1Set2 = lv_btn_create(ui_Panel7);
-    lv_obj_set_width(ui_User1Set2, 74);
-    lv_obj_set_height(ui_User1Set2, 41);
-    lv_obj_set_x(ui_User1Set2, 281);
-    lv_obj_set_y(ui_User1Set2, 0);
-    lv_obj_set_align(ui_User1Set2, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_User1Set2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_User1Set2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_User2Set = lv_btn_create(ui_Panel7);
+    lv_obj_set_width(ui_User2Set, 74);
+    lv_obj_set_height(ui_User2Set, 41);
+    lv_obj_set_x(ui_User2Set, 281);
+    lv_obj_set_y(ui_User2Set, 0);
+    lv_obj_set_align(ui_User2Set, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_User2Set, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_User2Set, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_User1Label2 = lv_label_create(ui_User1Set2);
+    ui_User1Label2 = lv_label_create(ui_User2Set);
     lv_obj_set_width(ui_User1Label2, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_User1Label2, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_User1Label2, 1);
@@ -166,13 +197,14 @@ void ui_Setting_screen_init(void)
     lv_obj_set_x(ui_Label10, -274);
     lv_obj_set_y(ui_Label10, 29);
     lv_obj_set_align(ui_Label10, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label10, "User2");
+    lv_label_set_text(ui_Label10, "用户2");
+    lv_obj_set_style_text_font(ui_Label10, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_User2Time1 = lv_textarea_create(ui_Panel7);
     lv_obj_set_width(ui_User2Time1, 121);
     lv_obj_set_height(ui_User2Time1, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User2Time1, -151);
-    lv_obj_set_y(ui_User2Time1, 0);
+    lv_obj_set_y(ui_User2Time1, -20);
     lv_obj_set_align(ui_User2Time1, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User2Time1, 10);
     lv_textarea_set_placeholder_text(ui_User2Time1, "Time1");
@@ -182,7 +214,7 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User2Time2, 121);
     lv_obj_set_height(ui_User2Time2, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User2Time2, 4);
-    lv_obj_set_y(ui_User2Time2, 0);
+    lv_obj_set_y(ui_User2Time2, -20);
     lv_obj_set_align(ui_User2Time2, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User2Time2, 10);
     lv_textarea_set_placeholder_text(ui_User2Time2, "Time2");
@@ -192,11 +224,41 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User2Time3, 121);
     lv_obj_set_height(ui_User2Time3, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User2Time3, 159);
-    lv_obj_set_y(ui_User2Time3, 0);
+    lv_obj_set_y(ui_User2Time3, -20);
     lv_obj_set_align(ui_User2Time3, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User2Time3, 10);
     lv_textarea_set_placeholder_text(ui_User2Time3, "Time3");
     lv_textarea_set_one_line(ui_User2Time3, true);
+
+    ui_User2eat1 = lv_textarea_create(ui_Panel7);
+    lv_obj_set_width(ui_User2eat1, 121);
+    lv_obj_set_height(ui_User2eat1, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User2eat1, -151);
+    lv_obj_set_y(ui_User2eat1, 25);
+    lv_obj_set_align(ui_User2eat1, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User2eat1, 20);
+    lv_textarea_set_placeholder_text(ui_User2eat1, "Eat1");
+    lv_textarea_set_one_line(ui_User2eat1, true);
+
+    ui_User2eat2 = lv_textarea_create(ui_Panel7);
+    lv_obj_set_width(ui_User2eat2, 121);
+    lv_obj_set_height(ui_User2eat2, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User2eat2, 4);
+    lv_obj_set_y(ui_User2eat2, 25);
+    lv_obj_set_align(ui_User2eat2, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User2eat2, 20);
+    lv_textarea_set_placeholder_text(ui_User2eat2, "Eat2");
+    lv_textarea_set_one_line(ui_User2eat2, true);
+
+    ui_User2eat3 = lv_textarea_create(ui_Panel7);
+    lv_obj_set_width(ui_User2eat3, 121);
+    lv_obj_set_height(ui_User2eat3, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User2eat3, 159);
+    lv_obj_set_y(ui_User2eat3, 25);
+    lv_obj_set_align(ui_User2eat3, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User2eat3, 20);
+    lv_textarea_set_placeholder_text(ui_User2eat3, "Eat3");
+    lv_textarea_set_one_line(ui_User2eat3, true);
 
     ui_Panel8 = lv_obj_create(ui_Setting);
     lv_obj_set_width(ui_Panel8, 662);
@@ -214,16 +276,16 @@ void ui_Setting_screen_init(void)
     lv_obj_set_style_shadow_color(ui_Panel8, lv_color_hex(0x000000), LV_PART_SCROLLBAR | LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_opa(ui_Panel8, 255, LV_PART_SCROLLBAR | LV_STATE_DEFAULT);
 
-    ui_User1Set3 = lv_btn_create(ui_Panel8);
-    lv_obj_set_width(ui_User1Set3, 74);
-    lv_obj_set_height(ui_User1Set3, 41);
-    lv_obj_set_x(ui_User1Set3, 281);
-    lv_obj_set_y(ui_User1Set3, 0);
-    lv_obj_set_align(ui_User1Set3, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_User1Set3, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_User1Set3, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    ui_User3Set = lv_btn_create(ui_Panel8);
+    lv_obj_set_width(ui_User3Set, 74);
+    lv_obj_set_height(ui_User3Set, 41);
+    lv_obj_set_x(ui_User3Set, 281);
+    lv_obj_set_y(ui_User3Set, 0);
+    lv_obj_set_align(ui_User3Set, LV_ALIGN_CENTER);
+    lv_obj_add_flag(ui_User3Set, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
+    lv_obj_clear_flag(ui_User3Set, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
 
-    ui_User1Label3 = lv_label_create(ui_User1Set3);
+    ui_User1Label3 = lv_label_create(ui_User3Set);
     lv_obj_set_width(ui_User1Label3, LV_SIZE_CONTENT);   /// 1
     lv_obj_set_height(ui_User1Label3, LV_SIZE_CONTENT);    /// 1
     lv_obj_set_x(ui_User1Label3, 1);
@@ -248,13 +310,14 @@ void ui_Setting_screen_init(void)
     lv_obj_set_x(ui_Label15, -274);
     lv_obj_set_y(ui_Label15, 29);
     lv_obj_set_align(ui_Label15, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label15, "User3");
+    lv_label_set_text(ui_Label15, "用户3");
+    lv_obj_set_style_text_font(ui_Label15, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     ui_User3Time1 = lv_textarea_create(ui_Panel8);
     lv_obj_set_width(ui_User3Time1, 121);
     lv_obj_set_height(ui_User3Time1, LV_SIZE_CONTENT);    /// 48
-    lv_obj_set_x(ui_User3Time1, -149);
-    lv_obj_set_y(ui_User3Time1, 0);
+    lv_obj_set_x(ui_User3Time1, -151);
+    lv_obj_set_y(ui_User3Time1, -20);
     lv_obj_set_align(ui_User3Time1, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User3Time1, 10);
     lv_textarea_set_placeholder_text(ui_User3Time1, "Time1");
@@ -264,7 +327,7 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User3Time2, 121);
     lv_obj_set_height(ui_User3Time2, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User3Time2, 4);
-    lv_obj_set_y(ui_User3Time2, 0);
+    lv_obj_set_y(ui_User3Time2, -20);
     lv_obj_set_align(ui_User3Time2, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User3Time2, 10);
     lv_textarea_set_placeholder_text(ui_User3Time2, "Time2");
@@ -274,17 +337,47 @@ void ui_Setting_screen_init(void)
     lv_obj_set_width(ui_User3Time3, 121);
     lv_obj_set_height(ui_User3Time3, LV_SIZE_CONTENT);    /// 48
     lv_obj_set_x(ui_User3Time3, 159);
-    lv_obj_set_y(ui_User3Time3, 0);
+    lv_obj_set_y(ui_User3Time3, -20);
     lv_obj_set_align(ui_User3Time3, LV_ALIGN_CENTER);
     lv_textarea_set_max_length(ui_User3Time3, 10);
     lv_textarea_set_placeholder_text(ui_User3Time3, "Time3");
     lv_textarea_set_one_line(ui_User3Time3, true);
 
+    ui_User3eat1 = lv_textarea_create(ui_Panel8);
+    lv_obj_set_width(ui_User3eat1, 121);
+    lv_obj_set_height(ui_User3eat1, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User3eat1, -151);
+    lv_obj_set_y(ui_User3eat1, 25);
+    lv_obj_set_align(ui_User3eat1, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User3eat1, 20);
+    lv_textarea_set_placeholder_text(ui_User3eat1, "Eat1");
+    lv_textarea_set_one_line(ui_User3eat1, true);
+
+    ui_User3eat2 = lv_textarea_create(ui_Panel8);
+    lv_obj_set_width(ui_User3eat2, 121);
+    lv_obj_set_height(ui_User3eat2, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User3eat2, 4);
+    lv_obj_set_y(ui_User3eat2, 25);
+    lv_obj_set_align(ui_User3eat2, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User3eat2, 20);
+    lv_textarea_set_placeholder_text(ui_User3eat2, "Eat2");
+    lv_textarea_set_one_line(ui_User3eat2, true);
+
+    ui_User3eat3 = lv_textarea_create(ui_Panel8);
+    lv_obj_set_width(ui_User3eat3, 121);
+    lv_obj_set_height(ui_User3eat3, LV_SIZE_CONTENT);    /// 48
+    lv_obj_set_x(ui_User3eat3, 159);
+    lv_obj_set_y(ui_User3eat3, 25);
+    lv_obj_set_align(ui_User3eat3, LV_ALIGN_CENTER);
+    lv_textarea_set_max_length(ui_User3eat3, 20);
+    lv_textarea_set_placeholder_text(ui_User3eat3, "Eat3");
+    lv_textarea_set_one_line(ui_User3eat3, true);
+
     ui_TimeKeyboard = lv_keyboard_create(ui_Setting);
     lv_obj_set_width(ui_TimeKeyboard, 409);
     lv_obj_set_height(ui_TimeKeyboard, 132);
-    lv_obj_set_x(ui_TimeKeyboard, 14);
-    lv_obj_set_y(ui_TimeKeyboard, 166);
+    lv_obj_set_x(ui_TimeKeyboard, 11);
+    lv_obj_set_y(ui_TimeKeyboard, 190);
     lv_obj_set_align(ui_TimeKeyboard, LV_ALIGN_CENTER);
     lv_obj_add_flag(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN);     /// Flags
 
@@ -292,11 +385,23 @@ void ui_Setting_screen_init(void)
     lv_obj_add_event_cb(ui_User1Time1, ui_event_User1Time1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User1Time2, ui_event_User1Time2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User1Time3, ui_event_User1Time3, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User1eat1, ui_event_User1eat1, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User1eat3, ui_event_User1eat3, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User1eat2, ui_event_User1eat2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User2Time1, ui_event_User2Time1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User2Time2, ui_event_User2Time2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User2Time3, ui_event_User2Time3, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User2eat1, ui_event_User2eat1, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User2eat2, ui_event_User2eat2, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User2eat3, ui_event_User2eat3, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User3Time1, ui_event_User3Time1, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User3Time2, ui_event_User3Time2, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_User3Time3, ui_event_User3Time3, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User3eat1, ui_event_Usere3eat1, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User3eat2, ui_event_User3eat2, LV_EVENT_ALL, NULL);
+    lv_obj_add_event_cb(ui_User3eat3, ui_event_User3eat3, LV_EVENT_ALL, NULL);
 
+    lv_obj_add_event_cb(ui_User1Set,ui_event_set,LV_EVENT_CLICKED,NULL );
+    lv_obj_add_event_cb(ui_User2Set,ui_event_set,LV_EVENT_CLICKED,NULL );
+    lv_obj_add_event_cb(ui_User3Set,ui_event_set,LV_EVENT_CLICKED,NULL );
 }

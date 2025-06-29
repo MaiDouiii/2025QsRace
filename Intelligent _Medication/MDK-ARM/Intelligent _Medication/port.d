@@ -1,7 +1,7 @@
 intelligent _medication\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c
 intelligent _medication\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\port.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\port.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\port.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\port.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\port.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\port.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

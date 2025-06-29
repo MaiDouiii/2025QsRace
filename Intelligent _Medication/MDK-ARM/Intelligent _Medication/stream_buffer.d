@@ -1,8 +1,8 @@
 intelligent _medication\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
-intelligent _medication\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-intelligent _medication\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\stream_buffer.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\stream_buffer.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\stream_buffer.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\stream_buffer.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 intelligent _medication\stream_buffer.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\stream_buffer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

@@ -137,7 +137,7 @@ static void disp_init(void)
 static void disp_flush(lv_disp_drv_t * disp_drv, const lv_area_t * area, lv_color_t * color_p)
 {
 	lcd_color_fill(area->x1,area->y1,area->x2,area->y2,(uint16_t *)color_p);
-    lv_disp_flush_ready(disp_drv);
+  lv_disp_flush_ready(disp_drv);
 }
 
 /*OPTIONAL: GPU INTERFACE*/

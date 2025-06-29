@@ -1,9 +1,9 @@
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\lv_hal_disp.c
-intelligent _medication\lv_hal_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-intelligent _medication\lv_hal_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_hal_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_hal_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\lv_hal.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\lv_hal_disp.h
-intelligent _medication\lv_hal_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\lv_hal_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\lv_hal.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/lv_draw.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../lv_conf_internal.h
@@ -18,11 +18,11 @@ intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../m
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_log.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_types.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_mem.h
-intelligent _medication\lv_hal_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_hal_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_math.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_anim.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_txt.h
-intelligent _medication\lv_hal_disp.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+intelligent _medication\lv_hal_disp.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_printf.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_bidi.h
 intelligent _medication\lv_hal_disp.o: ..\APP\LVGL\GUI\lvgl\src\hal\../draw/../misc/lv_style_gen.h

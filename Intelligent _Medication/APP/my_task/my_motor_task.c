@@ -2,9 +2,10 @@
 
 SemaphoreHandle_t motor_semphr;
 
-user_medicine user_medicine_data[3] = {0};
-
 uint8_t now_location = 0;
+uint8_t now_user = 0;
+uint8_t now_time_period = 0;
+uint8_t eat_flag = 1; // 吃药标志位,1表示已经服药,0表示还没服药
 
 /**
  * @brief    电机任务
@@ -16,22 +17,15 @@ void motor_task(void *params)
 {
     int8_t move_num = 0;
     uint8_t move_dir = 0, medicine_num = 0;
-    for (uint8_t i = 0; i < 6; i++)
-    {
-        user_medicine_data[0].medicine[i][0] = 0; // 初始化药品数量为0
-    }
-    user_medicine_data[0].medicine[0][0] = 2;
-    // user_medicine_data[0].medicine[4][0] = 1;
-    // user_medicine_data[0].medicine[5][0] = 1;
-    // user_medicine_data[0].medicine[3][0] = 1;
-    // user_medicine_data[0].medicine[2][0] = 1;
+    //		user_messages[0].medicine[0][1] = 1;
+    //		user_messages[0].medicine[0][2] = 1;
     while (1)
     {
         if (xSemaphoreTake(motor_semphr, portMAX_DELAY) == pdTRUE)
         {
             for (uint8_t i = 0; i < 6; i++)
             {
-                medicine_num = user_medicine_data[0].medicine[i][0];
+                medicine_num = user_messages[now_user].medicine[now_time_period][i];
                 if (medicine_num == 0) // 对应要服用的药品数量为0,不取药
                 {
                     continue;
@@ -78,6 +72,13 @@ void motor_task(void *params)
                     motor_take_control();
                 }
             }
+						//将当前药盒位置now_location写入flash中..
+						at24c02_write(0x11,now_location);
+						xSemaphoreTake(lvgl_semphr, portMAX_DELAY);
+						lv_label_set_text_fmt(ui_Location,"当前正对药盒号:%d号",now_location + 1);
+						xSemaphoreGive(lvgl_semphr);
+						/*****/
+            xSemaphoreGive(check_semphr); // 给检查任务发送信号量，表示电机任务已完成
         }
     }
 }

@@ -81,7 +81,7 @@
           </BeforeMake>
           <AfterMake>
             <RunUserProg1>0</RunUserProg1>
-            <RunUserProg2>0</RunUserProg2>
+            <RunUserProg2>1</RunUserProg2>
             <UserProg1Name></UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
@@ -340,7 +340,7 @@
               <MiscControls>--no-multibyte-chars</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F407xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../APP/LCD;../APP/TOUCH;../APP/delay;../APP/LVGL/GUI;../APP/LVGL/GUI/lvgl;../APP/LVGL/GUI/lvgl/src;../APP/LVGL/GUI/lvgl/examples/porting;../APP/KEY;../APP;../APP/SDcard;../APP/MOTOR;../APP/Ring_Buff;../APP/ui_code;../APP/my_task;../FATFS/Target;../FATFS/App;../Middlewares/Third_Party/FatFs/src;..\APP\AT24C02</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc;../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F4xx/Include;../Drivers/CMSIS/Include;../Middlewares/Third_Party/FreeRTOS/Source/include;../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2;../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F;../APP/LCD;../APP/TOUCH;../APP/delay;../APP/LVGL/GUI;../APP/LVGL/GUI/lvgl;../APP/LVGL/GUI/lvgl/src;../APP/LVGL/GUI/lvgl/examples/porting;../APP/KEY;../APP;../APP/SDcard;../APP/MOTOR;../APP/Ring_Buff;../APP/ui_code;../APP/my_task;../FATFS/Target;../FATFS/App;../Middlewares/Third_Party/FatFs/src;../APP/AT24C02;../APP/DHT11;../APP/esp8266</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2262,6 +2262,26 @@
               <FileType>1</FileType>
               <FilePath>..\APP\AT24C02\iic.c</FilePath>
             </File>
+            <File>
+              <FileName>dht11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\DHT11\dht11.c</FilePath>
+            </File>
+            <File>
+              <FileName>esp8266.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\esp8266\esp8266.c</FilePath>
+            </File>
+            <File>
+              <FileName>DataHandle.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\esp8266\DataHandle.c</FilePath>
+            </File>
+            <File>
+              <FileName>cJSON.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\esp8266\cJSON.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3172,6 +3192,16 @@
               <FileType>1</FileType>
               <FilePath>..\APP\my_task\my_motor_task.c</FilePath>
             </File>
+            <File>
+              <FileName>my_uart_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\my_task\my_uart_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>my_check_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\my_task\my_check_task.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -3797,24 +3827,9 @@
               <FilePath>..\APP\ui_code\ui.c</FilePath>
             </File>
             <File>
-              <FileName>ui.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\APP\ui_code\ui.h</FilePath>
-            </File>
-            <File>
-              <FileName>ui_events.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\APP\ui_code\ui_events.h</FilePath>
-            </File>
-            <File>
               <FileName>ui_helpers.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\ui_code\ui_helpers.c</FilePath>
-            </File>
-            <File>
-              <FileName>ui_helpers.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\APP\ui_code\ui_helpers.h</FilePath>
             </File>
             <File>
               <FileName>ui_Content.c</FileName>
@@ -3837,9 +3852,9 @@
               <FilePath>..\APP\ui_code\screens\ui_Setting.c</FilePath>
             </File>
             <File>
-              <FileName>ui_Turn.c</FileName>
+              <FileName>ui_Show.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\APP\ui_code\screens\ui_Turn.c</FilePath>
+              <FilePath>..\APP\ui_code\screens\ui_Show.c</FilePath>
             </File>
             <File>
               <FileName>ui_WIFI.c</FileName>
@@ -3872,6 +3887,11 @@
               <FilePath>..\APP\ui_code\images\ui_img_163563252.c</FilePath>
             </File>
             <File>
+              <FileName>ui_img_204610073.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\ui_code\images\ui_img_204610073.c</FilePath>
+            </File>
+            <File>
               <FileName>ui_img_299487825.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\ui_code\images\ui_img_299487825.c</FilePath>
@@ -3885,6 +3905,11 @@
               <FileName>ui_img_719842935.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\ui_code\images\ui_img_719842935.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_944254084.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\ui_code\images\ui_img_944254084.c</FilePath>
             </File>
             <File>
               <FileName>ui_img_1609717271.c</FileName>
@@ -3925,6 +3950,11 @@
               <FileName>ui_img_sdcard_png.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\ui_code\images\ui_img_sdcard_png.c</FilePath>
+            </File>
+            <File>
+              <FileName>ui_img_wifi_png.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\ui_code\images\ui_img_wifi_png.c</FilePath>
             </File>
           </Files>
         </Group>

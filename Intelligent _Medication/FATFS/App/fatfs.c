@@ -45,6 +45,21 @@ void MX_FATFS_Init(void)
 DWORD get_fattime(void)
 {
   /* USER CODE BEGIN get_fattime */
+//  RTC_TimeTypeDef sTime;
+//  RTC_DateTypeDef sDate;
+//  
+//  // 从RTC获取当前时间
+//  HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+//  HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+//  
+//  // 转换为FAT时间格式
+//  return ((sDate.Year) << 25) |  // 年 (2025年 = 45)
+//         ((sDate.Month) << 21) |  // 月 (1-12)
+//         ((sDate.Date) << 16) |  // 日 (1-31)
+//         ((sTime.Hours) << 11) | // 时 (0-23)
+//         ((sTime.Minutes) << 5) | // 分 (0-59)
+//         ((sTime.Seconds / 2));   // 秒 (除以2)
+	
   return 0;
   /* USER CODE END get_fattime */
 }

@@ -1,8 +1,8 @@
 intelligent _medication\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
-intelligent _medication\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\cmsis_os2.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-intelligent _medication\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
-intelligent _medication\cmsis_os2.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\cmsis_os2.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\cmsis_os2.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 intelligent _medication\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
 intelligent _medication\cmsis_os2.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 intelligent _medication\cmsis_os2.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h

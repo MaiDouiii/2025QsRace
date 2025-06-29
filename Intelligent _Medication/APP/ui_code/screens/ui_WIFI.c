@@ -8,7 +8,7 @@
 void ui_WIFI_screen_init(void)
 {
     ui_WIFI = lv_obj_create(NULL);
-    lv_obj_clear_flag(ui_WIFI, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(ui_WIFI, LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
     ui_WifiBack = lv_btn_create(ui_WIFI);
     lv_obj_set_width(ui_WifiBack, 70);
@@ -16,8 +16,8 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_WifiBack, -362);
     lv_obj_set_y(ui_WifiBack, -208);
     lv_obj_set_align(ui_WifiBack, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_WifiBack, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WifiBack, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_WifiBack, LV_OBJ_FLAG_SCROLL_ON_FOCUS); /// Flags
+    lv_obj_clear_flag(ui_WifiBack, LV_OBJ_FLAG_SCROLLABLE);    /// Flags
     lv_obj_set_style_bg_color(ui_WifiBack, lv_color_hex(0xFFFFFF), LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_bg_opa(ui_WifiBack, 0, LV_PART_MAIN | LV_STATE_DEFAULT);
     lv_obj_set_style_shadow_color(ui_WifiBack, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT);
@@ -25,13 +25,13 @@ void ui_WIFI_screen_init(void)
 
     ui_Image11 = lv_img_create(ui_WifiBack);
     lv_img_set_src(ui_Image11, &ui_img_1609717271);
-    lv_obj_set_width(ui_Image11, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image11, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Image11, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Image11, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Image11, 0);
     lv_obj_set_y(ui_Image11, -1);
     lv_obj_set_align(ui_Image11, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image11, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image11, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_Image11, LV_OBJ_FLAG_ADV_HITTEST);  /// Flags
+    lv_obj_clear_flag(ui_Image11, LV_OBJ_FLAG_SCROLLABLE); /// Flags
     lv_img_set_zoom(ui_Image11, 180);
 
     ui_Panel3 = lv_obj_create(ui_WIFI);
@@ -40,11 +40,11 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_Panel3, -7);
     lv_obj_set_y(ui_Panel3, -3);
     lv_obj_set_align(ui_Panel3, LV_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Panel3, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(ui_Panel3, LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
     ui_Password = lv_textarea_create(ui_Panel3);
     lv_obj_set_width(ui_Password, 200);
-    lv_obj_set_height(ui_Password, LV_SIZE_CONTENT);    /// 40
+    lv_obj_set_height(ui_Password, LV_SIZE_CONTENT); /// 40
     lv_obj_set_x(ui_Password, -118);
     lv_obj_set_y(ui_Password, 14);
     lv_obj_set_align(ui_Password, LV_ALIGN_CENTER);
@@ -55,7 +55,7 @@ void ui_WIFI_screen_init(void)
 
     ui_Users = lv_textarea_create(ui_Panel3);
     lv_obj_set_width(ui_Users, 200);
-    lv_obj_set_height(ui_Users, LV_SIZE_CONTENT);    /// 40
+    lv_obj_set_height(ui_Users, LV_SIZE_CONTENT); /// 40
     lv_obj_set_x(ui_Users, -118);
     lv_obj_set_y(ui_Users, -53);
     lv_obj_set_align(ui_Users, LV_ALIGN_CENTER);
@@ -69,12 +69,12 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_Login, -119);
     lv_obj_set_y(ui_Login, 82);
     lv_obj_set_align(ui_Login, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Login, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_Login, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_Login, LV_OBJ_FLAG_SCROLL_ON_FOCUS); /// Flags
+    lv_obj_clear_flag(ui_Login, LV_OBJ_FLAG_SCROLLABLE);    /// Flags
 
     ui_Label13 = lv_label_create(ui_Login);
-    lv_obj_set_width(ui_Label13, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label13, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Label13, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Label13, LV_SIZE_CONTENT); /// 1
     lv_obj_set_align(ui_Label13, LV_ALIGN_CENTER);
     lv_label_set_text(ui_Label13, "Login");
 
@@ -84,11 +84,11 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_Panel4, 127);
     lv_obj_set_y(ui_Panel4, -6);
     lv_obj_set_align(ui_Panel4, LV_ALIGN_CENTER);
-    lv_obj_clear_flag(ui_Panel4, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_clear_flag(ui_Panel4, LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
     ui_Saved = lv_label_create(ui_Panel4);
-    lv_obj_set_width(ui_Saved, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Saved, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Saved, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Saved, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Saved, 1);
     lv_obj_set_y(ui_Saved, -102);
     lv_obj_set_align(ui_Saved, LV_ALIGN_CENTER);
@@ -97,23 +97,23 @@ void ui_WIFI_screen_init(void)
 
     ui_Image10 = lv_img_create(ui_Panel4);
     lv_img_set_src(ui_Image10, &ui_img_1649269564);
-    lv_obj_set_width(ui_Image10, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image10, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Image10, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Image10, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Image10, -71);
     lv_obj_set_y(ui_Image10, -64);
     lv_obj_set_align(ui_Image10, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image10, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image10, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_Image10, LV_OBJ_FLAG_ADV_HITTEST);  /// Flags
+    lv_obj_clear_flag(ui_Image10, LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
     ui_Image14 = lv_img_create(ui_Panel4);
     lv_img_set_src(ui_Image14, &ui_img_1649269564);
-    lv_obj_set_width(ui_Image14, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Image14, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Image14, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Image14, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Image14, -71);
     lv_obj_set_y(ui_Image14, -25);
     lv_obj_set_align(ui_Image14, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_Image14, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
-    lv_obj_clear_flag(ui_Image14, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_Image14, LV_OBJ_FLAG_ADV_HITTEST);  /// Flags
+    lv_obj_clear_flag(ui_Image14, LV_OBJ_FLAG_SCROLLABLE); /// Flags
 
     ui_WIFI1 = lv_btn_create(ui_Panel4);
     lv_obj_set_width(ui_WIFI1, 126);
@@ -121,12 +121,12 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_WIFI1, 16);
     lv_obj_set_y(ui_WIFI1, -64);
     lv_obj_set_align(ui_WIFI1, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_WIFI1, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WIFI1, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_WIFI1, LV_OBJ_FLAG_SCROLL_ON_FOCUS); /// Flags
+    lv_obj_clear_flag(ui_WIFI1, LV_OBJ_FLAG_SCROLLABLE);    /// Flags
 
     ui_Label17 = lv_label_create(ui_WIFI1);
-    lv_obj_set_width(ui_Label17, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label17, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Label17, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Label17, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Label17, -3);
     lv_obj_set_y(ui_Label17, 0);
     lv_obj_set_align(ui_Label17, LV_ALIGN_CENTER);
@@ -138,20 +138,20 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_WIFI2, 16);
     lv_obj_set_y(ui_WIFI2, -24);
     lv_obj_set_align(ui_WIFI2, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_WIFI2, LV_OBJ_FLAG_SCROLL_ON_FOCUS);     /// Flags
-    lv_obj_clear_flag(ui_WIFI2, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+    lv_obj_add_flag(ui_WIFI2, LV_OBJ_FLAG_SCROLL_ON_FOCUS); /// Flags
+    lv_obj_clear_flag(ui_WIFI2, LV_OBJ_FLAG_SCROLLABLE);    /// Flags
 
     ui_Label19 = lv_label_create(ui_WIFI2);
-    lv_obj_set_width(ui_Label19, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label19, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Label19, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Label19, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Label19, -2);
     lv_obj_set_y(ui_Label19, 0);
     lv_obj_set_align(ui_Label19, LV_ALIGN_CENTER);
-    lv_label_set_text(ui_Label19, "MaiDoui     Use");
+    lv_label_set_text(ui_Label19, "Steam32      Use");
 
     ui_Label16 = lv_label_create(ui_WIFI);
-    lv_obj_set_width(ui_Label16, LV_SIZE_CONTENT);   /// 1
-    lv_obj_set_height(ui_Label16, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_width(ui_Label16, LV_SIZE_CONTENT);  /// 1
+    lv_obj_set_height(ui_Label16, LV_SIZE_CONTENT); /// 1
     lv_obj_set_x(ui_Label16, -126);
     lv_obj_set_y(ui_Label16, -99);
     lv_obj_set_align(ui_Label16, LV_ALIGN_CENTER);
@@ -164,10 +164,12 @@ void ui_WIFI_screen_init(void)
     lv_obj_set_x(ui_WifiBoard, -89);
     lv_obj_set_y(ui_WifiBoard, 138);
     lv_obj_set_align(ui_WifiBoard, LV_ALIGN_CENTER);
-    lv_obj_add_flag(ui_WifiBoard, LV_OBJ_FLAG_HIDDEN);     /// Flags
+    lv_obj_add_flag(ui_WifiBoard, LV_OBJ_FLAG_HIDDEN); /// Flags
 
     lv_obj_add_event_cb(ui_WifiBack, ui_event_WifiBack, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Password, ui_event_Password, LV_EVENT_ALL, NULL);
     lv_obj_add_event_cb(ui_Users, ui_event_Users, LV_EVENT_ALL, NULL);
-
+    lv_obj_add_event_cb(ui_Login, ui_login_event, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(ui_WIFI1, ui_login_event, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(ui_WIFI2, ui_login_event, LV_EVENT_CLICKED, NULL);
 }

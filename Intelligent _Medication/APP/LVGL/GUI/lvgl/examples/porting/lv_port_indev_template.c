@@ -122,8 +122,8 @@ static void touchpad_get_xy(lv_coord_t * x, lv_coord_t * y)
 {
     /*Your code comes here*/
 
-    (*x) = tp_dev.x[0];
-    (*y) = tp_dev.y[0];
+    (*x) = 800 - tp_dev.x[0];
+    (*y) = 480 - tp_dev.y[0];
 }
 
 #else /*Enable this file at the top*/

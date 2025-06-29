@@ -7,6 +7,8 @@
     "my_motor_task.h": "c",
     "freertos.h": "c",
     "motor.h": "c",
-    "lv_port_indev_template.h": "c"
+    "lv_port_indev_template.h": "c",
+    "my_rtc_task.h": "c",
+    "my_check_task.h": "c"
   }
 }

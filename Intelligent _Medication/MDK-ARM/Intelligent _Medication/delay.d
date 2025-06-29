@@ -1,6 +1,6 @@
 intelligent _medication\delay.o: ..\APP\delay\delay.c
 intelligent _medication\delay.o: ..\APP\delay\delay.h
-intelligent _medication\delay.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\delay.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 intelligent _medication\delay.o: ../Core/Inc/stm32f4xx_hal_conf.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h
@@ -15,7 +15,7 @@ intelligent _medication\delay.o: ../Drivers/CMSIS/Include/mpu_armv7.h
 intelligent _medication\delay.o: ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-intelligent _medication\delay.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\delay.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h
 intelligent _medication\delay.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h

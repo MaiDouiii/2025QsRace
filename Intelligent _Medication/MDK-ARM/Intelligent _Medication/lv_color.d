@@ -1,13 +1,13 @@
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_color.c
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_color.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_internal.h
-intelligent _medication\lv_color.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\lv_color.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\../lv_conf_kconfig.h
 intelligent _medication\lv_color.o: ../APP/LVGL/GUI/lvgl/examples/porting/../../lv_conf.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_assert.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_log.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_types.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_mem.h
-intelligent _medication\lv_color.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\lv_color.o: D:\Keil5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\lv_color.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\lv_color.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 intelligent _medication\lv_color.o: ..\APP\LVGL\GUI\lvgl\src\misc\lv_math.h

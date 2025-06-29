@@ -14,7 +14,11 @@ lv_obj_t *ui_Main;
 lv_obj_t *ui_Panel1;
 lv_obj_t *ui_TimeLabel;
 lv_obj_t *ui_DataLabel;
-lv_obj_t *ui_Label4;
+lv_obj_t *ui_Data;
+lv_obj_t *ui_Image15;
+lv_obj_t *ui_Label2;
+lv_obj_t *ui_Temp;
+lv_obj_t *ui_Humidity;
 lv_obj_t *ui_Panel2;
 lv_obj_t *ui_MainLabel;
 lv_obj_t *ui_Image1;
@@ -35,7 +39,6 @@ void ui_event_WifiScreen(lv_event_t *e);
 lv_obj_t *ui_WifiScreen;
 lv_obj_t *ui_Image6;
 lv_obj_t *ui_Label7;
-void ui_event_UserScreen(lv_event_t *e);
 lv_obj_t *ui_UserScreen;
 lv_obj_t *ui_Image7;
 lv_obj_t *ui_Label8;
@@ -51,6 +54,13 @@ lv_obj_t *ui_Content;
 void ui_event_ContentBack(lv_event_t *e);
 lv_obj_t *ui_ContentBack;
 lv_obj_t *ui_Image4;
+lv_obj_t *ui_Panel6;
+lv_obj_t *ui_yh1;
+lv_obj_t *ui_yh2;
+lv_obj_t *ui_yh3;
+lv_obj_t *ui_yh4;
+lv_obj_t *ui_yh5;
+lv_obj_t *ui_yh6;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_WIFI
@@ -76,6 +86,7 @@ lv_obj_t *ui_WIFI2;
 lv_obj_t *ui_Label19;
 lv_obj_t *ui_Label16;
 lv_obj_t *ui_WifiBoard;
+void ui_login_event(lv_event_t *e);
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Log
@@ -84,22 +95,29 @@ lv_obj_t *ui_Log;
 void ui_event_LogBack(lv_event_t *e);
 lv_obj_t *ui_LogBack;
 lv_obj_t *ui_Image12;
+lv_obj_t *ui_Panel10;
+lv_obj_t *ui_Button5;
+lv_obj_t *ui_Label12;
+lv_obj_t *ui_Log1;
+lv_obj_t *ui_Log2;
+lv_obj_t *ui_Log3;
+lv_obj_t *ui_Log4;
+lv_obj_t *ui_Log5;
+lv_obj_t *ui_Log6;
+lv_obj_t *ui_Log7;
+lv_obj_t *ui_Log8;
+lv_obj_t *ui_Log9;
+lv_obj_t *ui_Log10;
 // CUSTOM VARIABLES
 
-// SCREEN: ui_Turn
-void ui_Turn_screen_init(void);
-lv_obj_t *ui_Turn;
+// SCREEN: ui_Show
+void ui_Show_screen_init(void);
+lv_obj_t *ui_Show;
 void ui_event_Button12(lv_event_t *e);
 lv_obj_t *ui_Button12;
 lv_obj_t *ui_SDcardBack;
-lv_obj_t *ui_Mottor1;
-lv_obj_t *ui_Addr1;
-lv_obj_t *ui_Mottor2;
-lv_obj_t *ui_Addr2;
-lv_obj_t *ui_Turn1;
-lv_obj_t *ui_Addr3;
-lv_obj_t *ui_Turn2;
-lv_obj_t *ui_Addr5;
+lv_obj_t *ui_Location;
+lv_obj_t *ui_explain;
 // CUSTOM VARIABLES
 
 // SCREEN: ui_Setting
@@ -119,8 +137,14 @@ lv_obj_t *ui_Image13;
 lv_obj_t *ui_Label1;
 void ui_event_User1Time3(lv_event_t *e);
 lv_obj_t *ui_User1Time3;
+void ui_event_User1eat1(lv_event_t *e);
+lv_obj_t *ui_User1eat1;
+void ui_event_User1eat3(lv_event_t *e);
+lv_obj_t *ui_User1eat3;
+void ui_event_User1eat2(lv_event_t *e);
+lv_obj_t *ui_User1eat2;
 lv_obj_t *ui_Panel7;
-lv_obj_t *ui_User1Set2;
+lv_obj_t *ui_User2Set;
 lv_obj_t *ui_User1Label2;
 lv_obj_t *ui_Image16;
 lv_obj_t *ui_Label10;
@@ -130,8 +154,14 @@ void ui_event_User2Time2(lv_event_t *e);
 lv_obj_t *ui_User2Time2;
 void ui_event_User2Time3(lv_event_t *e);
 lv_obj_t *ui_User2Time3;
+void ui_event_User2eat1(lv_event_t *e);
+lv_obj_t *ui_User2eat1;
+void ui_event_User2eat2(lv_event_t *e);
+lv_obj_t *ui_User2eat2;
+void ui_event_User2eat3(lv_event_t *e);
+lv_obj_t *ui_User2eat3;
 lv_obj_t *ui_Panel8;
-lv_obj_t *ui_User1Set3;
+lv_obj_t *ui_User3Set;
 lv_obj_t *ui_User1Label3;
 lv_obj_t *ui_Image17;
 lv_obj_t *ui_Label15;
@@ -141,7 +171,15 @@ void ui_event_User3Time2(lv_event_t *e);
 lv_obj_t *ui_User3Time2;
 void ui_event_User3Time3(lv_event_t *e);
 lv_obj_t *ui_User3Time3;
+void ui_event_Usere3eat1(lv_event_t *e);
+lv_obj_t *ui_User3eat1;
+void ui_event_User3eat2(lv_event_t *e);
+lv_obj_t *ui_User3eat2;
+void ui_event_User3eat3(lv_event_t *e);
+lv_obj_t *ui_User3eat3;
 lv_obj_t *ui_TimeKeyboard;
+void ui_event_set(lv_event_t *e);
+
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -186,7 +224,7 @@ void ui_event_SDCardScreen(lv_event_t *e)
 
     if (event_code == LV_EVENT_CLICKED)
     {
-        _ui_screen_change(&ui_Turn, LV_SCR_LOAD_ANIM_FADE_ON, 10, 0, &ui_Turn_screen_init);
+        _ui_screen_change(&ui_Show, LV_SCR_LOAD_ANIM_FADE_ON, 10, 0, &ui_Show_screen_init);
     }
 }
 
@@ -197,16 +235,6 @@ void ui_event_WifiScreen(lv_event_t *e)
     if (event_code == LV_EVENT_CLICKED)
     {
         _ui_screen_change(&ui_WIFI, LV_SCR_LOAD_ANIM_FADE_ON, 10, 0, &ui_WIFI_screen_init);
-    }
-}
-
-void ui_event_UserScreen(lv_event_t *e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-
-    if (event_code == LV_EVENT_CLICKED)
-    {
-        _ui_screen_change(&ui_Content, LV_SCR_LOAD_ANIM_FADE_ON, 10, 0, &ui_Content_screen_init);
     }
 }
 
@@ -276,6 +304,45 @@ void ui_event_Users(lv_event_t *e)
     }
 }
 
+char wifi_name[20];
+char wifi_pass[20];
+uint8_t login_flag = 0;
+lv_obj_t *login_test;
+void ui_login_event(lv_event_t *e)
+{
+    lv_obj_t *taget = lv_event_get_target(e);
+
+    if (taget == ui_Login)
+    {
+        if (login_flag == 0)
+        {
+            lv_obj_t *box = lv_msgbox_create(ui_WIFI, "Login Message", NULL, NULL, true);
+            lv_obj_set_size(box, 350, 200);
+            lv_obj_center(box);
+            login_test = lv_label_create(box);
+            lv_obj_set_style_text_font(login_test, &lv_font_montserrat_16, LV_PART_MAIN | LV_STATE_DEFAULT);
+            lv_label_set_text(login_test, "\n       Wait for login in...");
+            sprintf((char *)wifi_name, lv_textarea_get_text(ui_Users));
+            sprintf((char *)wifi_pass, lv_textarea_get_text(ui_Password));
+            ESP8266_Clear();
+            login_flag = 1;
+        }
+
+        // printf("\"AT+CWJAP=\"%s\",\"%s\"\r\n\"", wifi_name, wifi_pass);
+        //  lv_label_set_text(login_test,"\n        Login success!");
+    }
+    if (taget == ui_WIFI1)
+    {
+        lv_textarea_set_text(ui_Users, "CMCC");
+        lv_textarea_set_text(ui_Password, "danpanji123321");
+    }
+    if (taget == ui_WIFI2)
+    {
+        lv_textarea_set_text(ui_Users, "Steam32");
+        lv_textarea_set_text(ui_Password, "1594568830");
+    }
+}
+
 void ui_event_LogBack(lv_event_t *e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -293,36 +360,6 @@ void ui_event_Button12(lv_event_t *e)
     if (event_code == LV_EVENT_CLICKED)
     {
         _ui_screen_change(&ui_Main, LV_SCR_LOAD_ANIM_FADE_ON, 10, 0, &ui_Main_screen_init);
-    }
-}
-
-
-void ui_event_Mottor(lv_event_t *e)
-{
-    lv_event_code_t event_code = lv_event_get_code(e);
-    lv_obj_t *targer = lv_event_get_target(e);
-
-    if (event_code == LV_EVENT_CLICKED)
-    {
-        if (targer == ui_Mottor1)
-        {
-
-
-        }
-        else if (targer == ui_Mottor2)
-        {
-
-        }
-        else if (targer == ui_Turn1)
-        {
-            motorTop_turn ^= 1;
-
-        }
-        else if (targer == ui_Turn2)
-        {
-
-            motorBottom_turn ^= 1;
-        }
     }
 }
 
@@ -390,6 +427,60 @@ void ui_event_User1Time3(lv_event_t *e)
     }
 }
 
+void ui_event_User1eat1(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User1eat1);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User1eat3(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User1eat3);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User1eat2(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User1eat2);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
 void ui_event_User2Time1(lv_event_t *e)
 {
     lv_event_code_t event_code = lv_event_get_code(e);
@@ -437,6 +528,60 @@ void ui_event_User2Time3(lv_event_t *e)
     if (event_code == LV_EVENT_CLICKED)
     {
         _ui_keyboard_set_target(ui_TimeKeyboard, ui_User2Time3);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User2eat1(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User2eat1);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User2eat2(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User2eat2);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User2eat3(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User2eat3);
     }
     if (event_code == LV_EVENT_DEFOCUSED)
     {
@@ -498,6 +643,127 @@ void ui_event_User3Time3(lv_event_t *e)
     }
 }
 
+void ui_event_Usere3eat1(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User3eat1);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User3eat2(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User3eat2);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void ui_event_User3eat3(lv_event_t *e)
+{
+    lv_event_code_t event_code = lv_event_get_code(e);
+
+    if (event_code == LV_EVENT_FOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+    }
+    if (event_code == LV_EVENT_CLICKED)
+    {
+        _ui_keyboard_set_target(ui_TimeKeyboard, ui_User3eat3);
+    }
+    if (event_code == LV_EVENT_DEFOCUSED)
+    {
+        _ui_flag_modify(ui_TimeKeyboard, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD);
+    }
+}
+
+void timeGet(int *timeBuff, const char *Time)
+{
+    char str[20];
+    sprintf(str, Time);
+    // printf("str: %s\n", str);
+    char *p = str;
+    while (*p != '\0')
+    {
+        if (*p == ':')
+        {
+            *p = ' ';
+        }
+        p++;
+    }
+    sscanf(str, "%d %d", &timeBuff[0], &timeBuff[1]);
+}
+
+void eatGet(int *eatBuff, const char *Eat)
+{
+    sscanf(Eat, "%d %d %d %d %d %d", &eatBuff[0], &eatBuff[1], &eatBuff[2], &eatBuff[3], &eatBuff[4], &eatBuff[5]);
+}
+
+void ui_event_set(lv_event_t *e)
+{
+    lv_obj_t *target = lv_event_get_target(e);
+    lv_obj_t *box = lv_msgbox_create(ui_Setting, "Setting Message", NULL, NULL, true);
+    lv_obj_set_size(box, 350, 200);
+    lv_obj_center(box);
+    lv_obj_t *set_test = lv_label_create(box);
+    lv_obj_set_style_text_font(set_test, &lv_font_montserrat_16, LV_PART_MAIN | LV_STATE_DEFAULT);
+    lv_label_set_text(set_test, "\n       Setting success!");
+    // HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+    if (target == ui_User1Set)
+    {
+        timeGet(user_messages[0].Time[0], lv_textarea_get_text(ui_User1Time1));
+        timeGet(user_messages[0].Time[1], lv_textarea_get_text(ui_User1Time2));
+        timeGet(user_messages[0].Time[2], lv_textarea_get_text(ui_User1Time3));
+        eatGet(user_messages[0].medicine[0], lv_textarea_get_text(ui_User1eat1));
+        eatGet(user_messages[0].medicine[1], lv_textarea_get_text(ui_User1eat2));
+        eatGet(user_messages[0].medicine[2], lv_textarea_get_text(ui_User1eat3));
+
+        for (int i = 0; i < 3; i++)
+        {
+            printf("%d %d\r\n", user_messages[0].Time[i][0], user_messages[0].Time[i][1]);
+            printf("%d %d %d %d %d %d\r\n", user_messages[0].medicine[i][0], user_messages[0].medicine[i][1], user_messages[0].medicine[i][2], user_messages[0].medicine[i][3], user_messages[0].medicine[i][4], user_messages[0].medicine[i][5]);
+        }
+    }
+    if (target == ui_User2Set)
+    {
+        timeGet(user_messages[1].Time[0], lv_textarea_get_text(ui_User2Time1));
+        timeGet(user_messages[1].Time[1], lv_textarea_get_text(ui_User2Time2));
+        timeGet(user_messages[1].Time[2], lv_textarea_get_text(ui_User2Time3));
+        eatGet(user_messages[1].medicine[0], lv_textarea_get_text(ui_User2eat1));
+        eatGet(user_messages[1].medicine[1], lv_textarea_get_text(ui_User2eat2));
+        eatGet(user_messages[1].medicine[2], lv_textarea_get_text(ui_User2eat3));
+    }
+    if (target == ui_User3Set)
+    {
+        timeGet(user_messages[2].Time[0], lv_textarea_get_text(ui_User3Time1));
+        timeGet(user_messages[2].Time[1], lv_textarea_get_text(ui_User3Time2));
+        timeGet(user_messages[2].Time[2], lv_textarea_get_text(ui_User3Time3));
+        eatGet(user_messages[2].medicine[0], lv_textarea_get_text(ui_User3eat1));
+        eatGet(user_messages[2].medicine[1], lv_textarea_get_text(ui_User3eat2));
+        eatGet(user_messages[2].medicine[2], lv_textarea_get_text(ui_User3eat3));
+    }
+}
+
 ///////////////////// SCREENS ////////////////////
 
 void ui_init(void)
@@ -510,7 +776,7 @@ void ui_init(void)
     ui_Content_screen_init();
     ui_WIFI_screen_init();
     ui_Log_screen_init();
-    ui_Turn_screen_init();
+    ui_Show_screen_init();
     ui_Setting_screen_init();
     ui____initial_actions0 = lv_obj_create(NULL);
     lv_disp_load_scr(ui_Main);

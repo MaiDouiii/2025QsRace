@@ -5,6 +5,7 @@
 
 #include "../ui.h"
 
+lv_obj_t *ui_Label4;
 void ui_Content_screen_init(void)
 {
     ui_Content = lv_obj_create(NULL);
@@ -33,6 +34,77 @@ void ui_Content_screen_init(void)
     lv_obj_add_flag(ui_Image4, LV_OBJ_FLAG_ADV_HITTEST);     /// Flags
     lv_obj_clear_flag(ui_Image4, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
     lv_img_set_zoom(ui_Image4, 180);
+
+    ui_Panel6 = lv_obj_create(ui_Content);
+    lv_obj_set_width(ui_Panel6, 626);
+    lv_obj_set_height(ui_Panel6, 355);
+    lv_obj_set_x(ui_Panel6, 5);
+    lv_obj_set_y(ui_Panel6, 20);
+    lv_obj_set_align(ui_Panel6, LV_ALIGN_CENTER);
+    lv_obj_clear_flag(ui_Panel6, LV_OBJ_FLAG_SCROLLABLE);      /// Flags
+
+    ui_yh1 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh1, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh1, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh1, -94);
+    lv_obj_set_y(ui_yh1, -102);
+    lv_obj_set_align(ui_yh1, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh1, "药盒1:                                       阿莫西林");
+    lv_obj_set_style_text_font(ui_yh1, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_Label4 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_Label4, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_Label4, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_Label4, -17);
+    lv_obj_set_y(ui_Label4, -149);
+    lv_obj_set_align(ui_Label4, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_Label4, "详细说明可通过语音播报知悉");
+    lv_obj_set_style_text_font(ui_Label4, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_yh2 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh2, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh2, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh2, -100);
+    lv_obj_set_y(ui_yh2, -56);
+    lv_obj_set_align(ui_yh2, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh2, "药盒2:                                        布洛芬");
+    lv_obj_set_style_text_font(ui_yh2, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_yh3 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh3, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh3, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh3, -86);
+    lv_obj_set_y(ui_yh3, -10);
+    lv_obj_set_align(ui_yh3, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh3, "药盒3:                                       感冒灵颗粒");
+    lv_obj_set_style_text_font(ui_yh3, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_yh4 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh4, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh4, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh4, -69);
+    lv_obj_set_y(ui_yh4, 36);
+    lv_obj_set_align(ui_yh4, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh4, "药盒4:                                    奥美拉唑肠溶胶囊");
+    lv_obj_set_style_text_font(ui_yh4, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_yh5 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh5, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh5, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh5, -72);
+    lv_obj_set_y(ui_yh5, 82);
+    lv_obj_set_align(ui_yh5, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh5, "药盒5:                                      盐酸西替利嗪片");
+    lv_obj_set_style_text_font(ui_yh5, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
+
+    ui_yh6 = lv_label_create(ui_Panel6);
+    lv_obj_set_width(ui_yh6, LV_SIZE_CONTENT);   /// 1
+    lv_obj_set_height(ui_yh6, LV_SIZE_CONTENT);    /// 1
+    lv_obj_set_x(ui_yh6, -83);
+    lv_obj_set_y(ui_yh6, 126);
+    lv_obj_set_align(ui_yh6, LV_ALIGN_CENTER);
+    lv_label_set_text(ui_yh6, "药盒6:                                        硝酸甘油片");
+    lv_obj_set_style_text_font(ui_yh6, &ui_font_Font1, LV_PART_MAIN | LV_STATE_DEFAULT);
 
     lv_obj_add_event_cb(ui_ContentBack, ui_event_ContentBack, LV_EVENT_ALL, NULL);
 

@@ -1,7 +1,7 @@
 intelligent _medication\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 intelligent _medication\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-intelligent _medication\croutine.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
-intelligent _medication\croutine.o: D:\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\croutine.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\croutine.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 intelligent _medication\croutine.o: ../Core/Inc/FreeRTOSConfig.h
 intelligent _medication\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 intelligent _medication\croutine.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

@@ -163,6 +163,25 @@ void at24c02_write(uint8_t addr, uint8_t data)
     HAL_Delay(5);
 }
 
+void at24c02_page_write(uint8_t addr, uint8_t *data , uint8_t size)
+{
+		uint8_t *p = data;
+    IIC_Start();
+    IIC_SendByte(0xA0); // 设备地址+写
+    IIC_waitACK();
+
+    IIC_SendByte(addr); // 写入地址
+
+    IIC_waitACK();
+		for(uint8_t i = 0;i<size;i++)
+		{
+			IIC_SendByte(*p++); // 写入数据
+			IIC_waitACK();			
+		}
+    IIC_Stop();
+    HAL_Delay(5);
+}
+
 uint8_t at24c02_read(uint8_t addr)
 {
     uint8_t data = 0;
