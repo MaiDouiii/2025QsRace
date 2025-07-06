@@ -125,22 +125,25 @@ int main(void)
 					}
 			}
 	}
-//	at24c02_write(0x11,0);
 //	if(f_mount(&my_fs,"0",1) != FR_OK)
 //	{
 //		printf("FS ERROR!\r\n");
 //	}
 		//f_open
   motor_init();
-
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart2, uart_buffer_2, 19);
+	
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)esp8266_buf, 299);
+	__HAL_DMA_DISABLE_IT(&hdma_usart3_rx, DMA_IT_HT);	
+	
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart2, uart_buffer_2, 49);
   __HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
 	
   HAL_UARTEx_ReceiveToIdle_DMA(&huart6, uart_buffer_6, 19);
   __HAL_DMA_DISABLE_IT(&hdma_usart6_rx, DMA_IT_HT);
+	
+	HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart_buffer_4, 10);
+  __HAL_DMA_DISABLE_IT(&hdma_uart4_rx, DMA_IT_HT);
 
-	HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)esp8266_buf, 299);
-	__HAL_DMA_DISABLE_IT(&hdma_usart3_rx, DMA_IT_HT);
   TIM4->CCR1 = 0;
   HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_1);
 

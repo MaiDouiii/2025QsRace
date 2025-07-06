@@ -62,7 +62,7 @@ void motor_pos_control(uint8_t addr, uint8_t dir, uint16_t speed, uint8_t accele
   {
     HAL_UART_Transmit(&huart2, (uint8_t *)cmd, 13, 100);
   }
-  HAL_Delay(10);
+  //HAL_Delay(10);
 }
 
 /**
@@ -145,14 +145,16 @@ void motor_init()
 void motor_take_control()
 {
 	uint8_t time_check = 0;
-  motor_pos_control(motor_top, motor_top_down, 800, 0, 45000, 0, 0);         // 滑台下移
-	vTaskDelay(200);
+  //motor_pos_control(motor_top, motor_top_down, 800, 0, 45000, 0, 0);         // 滑台下移
+	motor_pos_control(motor_top, motor_top_down, 800, 0, 43000, 0, 0);         // 滑台下移
+	HAL_Delay(200);
 	while(motor_stop_flag == 0)
 	{
 		motor_get_speed(motor_top);
-		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		if(++time_check >= 10) // 150*10=1500ms 超时,出现故障
 		{
 			time_check = 0;
+			memset(uart_buffer_2,0,sizeof(uart_buffer_2));
 			break;
 		}
 	}
@@ -166,7 +168,7 @@ void motor_take_control()
   vTaskDelay(700); // 延时700ms
 
   motor_pos_control(motor_top, motor_top_up, 800, 0, 96000, 0, 0);       // 滑台上移
-	vTaskDelay(200);
+	HAL_Delay(200);
   while (HAL_GPIO_ReadPin(TOP_UP_GPIO_Port, TOP_UP_Pin) == GPIO_PIN_SET) // 等待对管检测是否到达指定位置
   {
     HAL_Delay(5);
@@ -175,13 +177,14 @@ void motor_take_control()
   vTaskDelay(100);
 
   motor_pos_control(motor_bottom, motor_bottom_forward, 800, 0, 46000, 0, 0);            // 滑台左移动
-	vTaskDelay(200);
+	HAL_Delay(200);
 	while(motor_stop_flag == 0)
 	{
     motor_get_speed(motor_bottom);
-		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		if(++time_check >= 13) 
 		{
 			time_check = 0;
+			memset(uart_buffer_2,0,sizeof(uart_buffer_2));
 			break;
 		}
   }
@@ -189,14 +192,15 @@ void motor_take_control()
 	motor_stop_flag = 0;
   HAL_Delay(50);
 
-  motor_pos_control(motor_top, motor_top_down, 800, 0, 45000, 0, 0);         // 滑台下移
-	vTaskDelay(200);
+  motor_pos_control(motor_top, motor_top_down, 800, 0, 36000, 0, 0);         // 滑台下移
+	HAL_Delay(200);
 	while(motor_stop_flag == 0)
 	{
 		motor_get_speed(motor_top);
-		if(++time_check >= 30) // 150*30=4500ms 4.5s超时,出现故障
+		if(++time_check >= 13) 
 		{
 			time_check = 0;
+			memset(uart_buffer_2,0,sizeof(uart_buffer_2));
 			break;
 		}
 	}

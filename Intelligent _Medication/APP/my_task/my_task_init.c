@@ -15,7 +15,7 @@ TaskHandle_t key_handler;
 void rtc_task(void *params);
 TaskHandle_t rtc_handler;
 #define rtc_priority 10
-#define rtc_stack_size 256
+#define rtc_stack_size 128
 
 void motor_task(void *params);
 TaskHandle_t motor_handler;
@@ -25,7 +25,7 @@ TaskHandle_t motor_handler;
 void uart_task(void *params);
 TaskHandle_t uart_handler;
 #define uart_priority 12
-#define uart_stack_size 128
+#define uart_stack_size 384
 
 void check_task(void *params);
 TaskHandle_t check_handler;

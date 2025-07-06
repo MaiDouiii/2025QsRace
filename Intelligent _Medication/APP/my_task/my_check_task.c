@@ -16,7 +16,34 @@ void check_task(void *params)
     {
         if (xSemaphoreTake(check_semphr, portMAX_DELAY) == pdTRUE)
         {
-						HAL_UART_Transmit(&huart6, "E", 1, 10);
+						//播报送药完毕,提醒吃药语音
+						HAL_UART_Transmit(&huart6, "E", 1, 10);	
+						HAL_Delay(4000);
+						//人脸识别开始
+						Usart_SendString(&huart4,"do",2);
+						HAL_Delay(500);
+						while(Race_Flag == 0)
+						{
+								if(Race_Id != 3)
+								{
+									HAL_UART_Transmit(&huart6, "Q", 1, 10);	//验证身份失败
+									HAL_Delay(3000);
+									if(Race_Id == 0)
+										HAL_UART_Transmit(&huart6, "H", 1, 10);
+									else if(Race_Id == 1)
+										HAL_UART_Transmit(&huart6, "I", 1, 10);
+									else if(Race_Id == 2)
+										HAL_UART_Transmit(&huart6, "P", 1, 10);
+									HAL_Delay(4000);
+								}
+								Usart_SendString(&huart4,"do",2);
+								HAL_Delay(3000);
+						}
+						Race_Flag = 0;
+						HAL_UART_Transmit(&huart6, "R", 1, 10);	//成功检测到用户
+						HAL_Delay(2000);
+						Race_Id = 3;
+						
             // 红外对管检测药仓被取出
             while (HAL_GPIO_ReadPin(BOTTOM_FORWARD_GPIO_Port, BOTTOM_FORWARD_Pin) == GPIO_PIN_RESET)
             {
@@ -28,6 +55,7 @@ void check_task(void *params)
                 HAL_Delay(5);
             }
             eat_flag = 1; // 设置吃药标志位为1，表示已经服药
+						//播报已经服完药物语音
             HAL_UART_Transmit(&huart6, "D", 1, 10);
 						if(log_num == 0)			//服药日志存储
 						{

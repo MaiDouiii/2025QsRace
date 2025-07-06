@@ -5,7 +5,7 @@ Users user_messages[3] = {0};
 /**
  * @brief 判断是否到达用户服药时间前3分钟，到了就给电机任务发送信号量开始取药。
  *
- * 该函数的主要功能是检查当前时间是否接近用户设定的服药时间（提前5分钟）。
+ * 该函数的主要功能是检查当前时间是否接近用户设定的服药时间（提前3分钟）。
  * 如果满足条件，则向电机任务发送信号量，通知其开始执行取药操作。
  *
  * @note 确保系统时间和用户设定的服药时间已正确同步。
@@ -42,7 +42,7 @@ void rtc_task(void *params)
 				{
 					continue; // 跳过，检查下一个时间段
 				}
-				if ((user_messages[i].Time[j][0] == now_hour && user_messages[i].Time[j][1] == now_minute + 3) || (user_messages[i].Time[j][0] == now_hour + 1 && now_minute - user_messages[i].Time[j][1] == 57)) // 到达指定服药时间前3分钟
+				if ((user_messages[i].Time[j][0] == now_hour && user_messages[i].Time[j][1] <= now_minute + 3) || (user_messages[i].Time[j][0] == now_hour + 1 && now_minute - user_messages[i].Time[j][1] >= 57)) // 到达指定服药时间前3分钟
 				{
 					HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
 					now_user = i;					   // 记录当前用户

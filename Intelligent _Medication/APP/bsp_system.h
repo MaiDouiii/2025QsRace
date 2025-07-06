@@ -43,8 +43,9 @@ extern RTC_DateTypeDef GetData;
 extern RTC_TimeTypeDef GetTime;
 
 extern Users user_messages[3];
-extern uint8_t uart_buffer_2[20];
+extern uint8_t uart_buffer_2[50];
 extern uint8_t uart_buffer_6[20];
+extern uint8_t uart_buffer_4[11];
 extern uint8_t motorBottom_turn, motorTop_turn;
 extern uint16_t Pulse_count;
 
@@ -65,5 +66,7 @@ extern uint8_t now_time_period;
 extern uint8_t motor_stop_flag;
 extern uint8_t login_flag;
 extern uint8_t eat_flag;
+extern uint8_t Race_Flag;
+extern uint8_t Race_Id;
 
 #endif

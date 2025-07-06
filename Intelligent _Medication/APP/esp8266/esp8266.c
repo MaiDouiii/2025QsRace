@@ -109,8 +109,10 @@ void ESP8266_Init(void)
 	printf("8. DingYue_Connect\r\n");
 	while(ESP8266_SendCmd(ESP8266_MQTT_DingYue, "OK"))
 	delay_ms(500);
-    
-	printf("9. ESP8266 Init OK\r\n");
+	
+  HAL_UART_Transmit(&huart6, "F", 1, 10);			//播报成功上云
+	
+	//printf("9. ESP8266 Init OK\r\n");
 	ESP8266_Clear();
 	esp8266_flag = 1;
 }

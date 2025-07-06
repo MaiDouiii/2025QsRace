@@ -68,6 +68,52 @@ void TimeGet(Users *user, char *str,unsigned char user_id)
     }
 }
 
+void MedicalGet(Users *user, char *str,unsigned char user_id)
+{
+		char show_time[15] = {0};
+		uint8_t num = 0;
+    for (uint8_t i = 2; i < strlen(str); i++)
+    {
+			if(str[i]>='0' && str[i]<='9')
+			{
+				//show_time[num] = ' ';
+				show_time[num*2] = str[i];
+				if(i>2)
+				{
+					show_time[num*2 - 1] = ' ';
+				}
+				user->medicine[0][num] = str[i] - '0';
+				user->medicine[1][num] = str[i] - '0';
+				user->medicine[2][num] = str[i] - '0';
+				num++;
+			}
+		}
+		if(user_id == 0)
+		{
+			xSemaphoreTake(lvgl_semphr, portMAX_DELAY);
+			lv_textarea_set_text(ui_User1eat1,(const char *)show_time);
+			lv_textarea_set_text(ui_User1eat2,(const char *)show_time);
+			lv_textarea_set_text(ui_User1eat3,(const char *)show_time);
+			xSemaphoreGive(lvgl_semphr);
+		}
+		else if(user_id == 1)
+		{
+			xSemaphoreTake(lvgl_semphr, portMAX_DELAY);
+			lv_textarea_set_text(ui_User2eat1,(const char *)show_time);
+			lv_textarea_set_text(ui_User2eat2,(const char *)show_time);
+			lv_textarea_set_text(ui_User2eat3,(const char *)show_time);
+			xSemaphoreGive(lvgl_semphr);
+		}
+		else
+		{
+			xSemaphoreTake(lvgl_semphr, portMAX_DELAY);
+			lv_textarea_set_text(ui_User3eat1,(const char *)show_time);
+			lv_textarea_set_text(ui_User3eat2,(const char *)show_time);
+			lv_textarea_set_text(ui_User3eat3,(const char *)show_time);
+			xSemaphoreGive(lvgl_semphr);
+		}
+}
+
 void parse_mqtt_command(const char *data)
 {
 	
@@ -114,7 +160,21 @@ void parse_mqtt_command(const char *data)
 								TimeGet(&user_messages[2],value->valuestring,2);
 							}
 						}
-            
+            else
+						{
+							if(value->valuestring[0] == '0')
+							{
+								MedicalGet(&user_messages[0],value->valuestring,0);
+							}
+							else if(value->valuestring[0] == '1')
+							{
+								MedicalGet(&user_messages[1],value->valuestring,1);
+							}
+							else
+							{
+								MedicalGet(&user_messages[2],value->valuestring,2);
+							}
+						}
         }
     }
 

@@ -23,57 +23,89 @@ void uart_task(void *params)
 					parse_mqtt_command(esp8266_buf);
 					ESP8266_Clear();
 					break;
-				case 6:			//收到来自串口6发送的数据 ASR-PRO
-					if(uart_buffer_6[0] == 0xFF && uart_buffer_6[3] == 0xAF)
+				case 4:
+					if(uart_buffer_4[0] == 'D')
 					{
-						if(uart_buffer_6[1] == 0x11 && uart_buffer_6[2] == 0x22)			//用户1取药
-						{
-							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
-							{
-								if (user_messages[0].send_flag[j] == 1) // 如果该用户的该时间段已经送过药了
-								{
-									continue; // 跳过，检查下一个时间段
-								}
-								now_user = 0;					   // 记录当前用户
-								now_time_period = j;			   // 记录当前时间段
-								user_messages[0].send_flag[j] = 1; // 设置该时间段已送药标志位
-								xSemaphoreGive(motor_semphr);	   // 给电机任务发送信号量,开始送药
-								break;
-							}
-						}
-						else if(uart_buffer_6[1] == 0x33 && uart_buffer_6[2] == 0x44)	//用户2取药
-						{
-							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
-							{
-								if (user_messages[1].send_flag[j] == 1) // 如果该用户的该时间段已经送过药了
-								{
-									continue; // 跳过，检查下一个时间段
-								}
-								now_user = 1;					   // 记录当前用户
-								now_time_period = j;			   // 记录当前时间段
-								user_messages[1].send_flag[j] = 1; // 设置该时间段已送药标志位
-								xSemaphoreGive(motor_semphr);	   // 给电机任务发送信号量,开始送药
-
-								break;
-							}
-						}
-						else if(uart_buffer_6[1] == 0x55 && uart_buffer_6[2] == 0x66)	//用户3取药
-						{
-							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
-							{
-								if (user_messages[2].send_flag[j] == 1) // 如果该用户的该时间段已经送过药了
-								{
-									continue; // 跳过，检查下一个时间段
-								}
-								now_user = 2;					  						 // 记录当前用户
-								now_time_period = j;			 				  // 记录当前时间段
-								user_messages[2].send_flag[j] = 1; 	// 设置该时间段已送药标志位
-								xSemaphoreGive(motor_semphr);	 		  // 给电机任务发送信号量,开始送药
-								break;
-							}
-						}
+						Race_Id = 1;
 					}
-					memset(uart_buffer_6,0,sizeof(uart_buffer_6));
+					if(uart_buffer_4[0] == 'C')
+					{
+						Race_Id = 0;
+					}
+					if(uart_buffer_4[0] == 'Y')
+					{
+						Race_Id = 2;
+					}
+					if(Race_Id == now_user)
+					{
+						Race_Flag = 1;
+					}
+						
+					memset(uart_buffer_4,0,sizeof(uart_buffer_4));
+					break;
+				case 6:			//收到来自串口6发送的数据 ASR-PRO
+//					if(uart_buffer_6[0] == 0xFF && uart_buffer_6[3] == 0xAF)
+//					{
+//						if(uart_buffer_6[1] == 0x11 && uart_buffer_6[2] == 0x22)			//用户1取药
+//						{
+//							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+//							{
+//								uint8_t medical_sum = 0;
+//								for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+//								{
+//									medical_sum += user_messages[0].medicine[j][k];
+//								}
+//								if (user_messages[0].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+//								{
+//									continue; // 跳过，检查下一个时间段
+//								}
+//								now_user = 0;					   // 记录当前用户
+//								now_time_period = j;			   // 记录当前时间段
+//								user_messages[0].send_flag[j] = 1; // 设置该时间段已送药标志位
+//								break;
+//							}
+//						}
+//						else if(uart_buffer_6[1] == 0x33 && uart_buffer_6[2] == 0x44)	//用户2取药
+//						{
+//							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+//							{
+//								uint8_t medical_sum = 0;
+//								for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+//								{
+//									medical_sum += user_messages[1].medicine[j][k];
+//								}
+//								if (user_messages[1].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+//								{
+//									continue; // 跳过，检查下一个时间段
+//								}
+//								now_user = 1;					   // 记录当前用户
+//								now_time_period = j;			   // 记录当前时间段
+//								user_messages[1].send_flag[j] = 1; // 设置该时间段已送药标志位
+//								break;
+//							}
+//						}
+//						else if(uart_buffer_6[1] == 0x55 && uart_buffer_6[2] == 0x66)	//用户3取药
+//						{
+//							for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+//							{
+//								uint8_t medical_sum = 0;
+//								for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+//								{
+//									medical_sum += user_messages[2].medicine[j][k];
+//								}
+//								if (user_messages[2].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+//								{
+//									continue; // 跳过，检查下一个时间段
+//								}
+//								now_user = 2;					  						 // 记录当前用户
+//								now_time_period = j;			 				  // 记录当前时间段
+//								user_messages[2].send_flag[j] = 1; 	// 设置该时间段已送药标志位
+//								break;
+//							}
+//						}
+//						xSemaphoreGive(motor_semphr);	 		  // 给电机任务发送信号量,开始送药
+//					}
+//					memset(uart_buffer_6,0,sizeof(uart_buffer_6));
 					break;
 			}
 		}

@@ -5,7 +5,7 @@ extern lv_obj_t *login_test;
 void key_task(void *params)
 {
 	static uint8_t key_val, key_down, key_old;
-	uint16_t timeOut = 8000;
+	uint16_t timeOut = 20000;
 	char wifi_buf[50];
 	while (1)
 	{
@@ -20,7 +20,6 @@ void key_task(void *params)
 		}
 		if(login_flag == 1)
 		{
-			
 			sprintf(wifi_buf,"AT+CWJAP=\"%s\",\"%s\"\r\n",wifi_name,wifi_pass);
 			Usart_SendString(&huart3, (unsigned char *)wifi_buf, strlen((const char *)wifi_buf));
 			while (timeOut--)
@@ -39,7 +38,6 @@ void key_task(void *params)
 			}
 			if(login_flag == 0)
 			{
-					
 					xSemaphoreTake(lvgl_semphr, portMAX_DELAY);
 					lv_label_set_text(login_test,"\n        Login Success!");
 					xSemaphoreGive(lvgl_semphr);				

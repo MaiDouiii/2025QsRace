@@ -29,6 +29,7 @@ UART_HandleTypeDef huart1;
 UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 UART_HandleTypeDef huart6;
+DMA_HandleTypeDef hdma_uart4_rx;
 DMA_HandleTypeDef hdma_usart2_rx;
 DMA_HandleTypeDef hdma_usart3_rx;
 DMA_HandleTypeDef hdma_usart6_rx;
@@ -201,6 +202,25 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
     GPIO_InitStruct.Alternate = GPIO_AF8_UART4;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    /* UART4 DMA Init */
+    /* UART4_RX Init */
+    hdma_uart4_rx.Instance = DMA1_Stream2;
+    hdma_uart4_rx.Init.Channel = DMA_CHANNEL_4;
+    hdma_uart4_rx.Init.Direction = DMA_PERIPH_TO_MEMORY;
+    hdma_uart4_rx.Init.PeriphInc = DMA_PINC_DISABLE;
+    hdma_uart4_rx.Init.MemInc = DMA_MINC_ENABLE;
+    hdma_uart4_rx.Init.PeriphDataAlignment = DMA_PDATAALIGN_BYTE;
+    hdma_uart4_rx.Init.MemDataAlignment = DMA_MDATAALIGN_BYTE;
+    hdma_uart4_rx.Init.Mode = DMA_NORMAL;
+    hdma_uart4_rx.Init.Priority = DMA_PRIORITY_LOW;
+    hdma_uart4_rx.Init.FIFOMode = DMA_FIFOMODE_DISABLE;
+    if (HAL_DMA_Init(&hdma_uart4_rx) != HAL_OK)
+    {
+      Error_Handler();
+    }
+
+    __HAL_LINKDMA(uartHandle,hdmarx,hdma_uart4_rx);
 
     /* UART4 interrupt Init */
     HAL_NVIC_SetPriority(UART4_IRQn, 9, 0);
@@ -390,6 +410,9 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
     */
     HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0|GPIO_PIN_1);
 
+    /* UART4 DMA DeInit */
+    HAL_DMA_DeInit(uartHandle->hdmarx);
+
     /* UART4 interrupt Deinit */
     HAL_NVIC_DisableIRQ(UART4_IRQn);
   /* USER CODE BEGIN UART4_MspDeInit 1 */
@@ -491,47 +514,121 @@ int fputc(int ch, FILE *f)
 	HAL_UART_Transmit(&huart1,(uint8_t *)&ch,1,10); 
 	return ch; 
 }
-
-uint8_t uart_buffer_2[20] = {0};
+uint8_t uart_buffer_4[11] = {0};
+uint8_t uart_buffer_2[50] = {0};
 uint8_t uart_buffer_6[20] = {0};
+uint8_t Race_Id = 3;
+uint8_t Race_Flag = 0;
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
 	BaseType_t xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;
-	if(huart == &huart2)
+	if(huart == &huart4)		//K230
+	{
+		uart_flag = 4;
+		xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
+		
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart4, uart_buffer_4, 10);
+		__HAL_DMA_DISABLE_IT(&hdma_uart4_rx, DMA_IT_HT);
+	}
+	if(huart == &huart2)		//滑台步进电机
 	{
 		//printf("u2 in\r\n");
 		uart_flag = 2;
 		xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
-		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, uart_buffer_2, 19);
+		HAL_UARTEx_ReceiveToIdle_DMA(&huart2, uart_buffer_2, 49);
 		__HAL_DMA_DISABLE_IT(&hdma_usart2_rx, DMA_IT_HT);
 	}
-	if(huart == &huart6)
+	if(huart == &huart6)	//语音通信
 	{
-		//printf("u6 in\r\n");
-		uart_flag = 6;
-		xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
+		if(uart_buffer_6[0] == 0xFF && uart_buffer_6[3] == 0xAF)
+		{
+			if(uart_buffer_6[1] == 0x11 && uart_buffer_6[2] == 0x22)			//用户1取药
+			{
+				for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+				{
+					uint8_t medical_sum = 0;
+					for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+					{
+						medical_sum += user_messages[0].medicine[j][k];
+					}
+					if (user_messages[0].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+					{
+						continue; // 跳过，检查下一个时间段
+					}
+					now_user = 0;					   // 记录当前用户
+					now_time_period = j;			   // 记录当前时间段
+					user_messages[0].send_flag[j] = 1; // 设置该时间段已送药标志位
+					break;
+				}
+			}
+			else if(uart_buffer_6[1] == 0x33 && uart_buffer_6[2] == 0x44)	//用户2取药
+			{
+				for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+				{
+					uint8_t medical_sum = 0;
+					for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+					{
+						medical_sum += user_messages[1].medicine[j][k];
+					}
+					if (user_messages[1].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+					{
+						continue; // 跳过，检查下一个时间段
+					}
+					now_user = 1;					   // 记录当前用户
+					now_time_period = j;			   // 记录当前时间段
+					user_messages[1].send_flag[j] = 1; // 设置该时间段已送药标志位
+					break;
+				}
+			}
+			else if(uart_buffer_6[1] == 0x55 && uart_buffer_6[2] == 0x66)	//用户3取药
+			{
+				for (uint8_t j = 0; j < 3; j++) // 三个时间段 早中晚
+				{
+					uint8_t medical_sum = 0;
+					for (uint8_t k = 0; k < 6 ; k++)	//没有设置药物
+					{
+						medical_sum += user_messages[2].medicine[j][k];
+					}
+					if (user_messages[2].send_flag[j] == 1 || medical_sum == 0) // 如果该用户的该时间段已经送过药了
+					{
+						continue; // 跳过，检查下一个时间段
+					}
+					now_user = 2;					  						 // 记录当前用户
+					now_time_period = j;			 				  // 记录当前时间段
+					user_messages[2].send_flag[j] = 1; 	// 设置该时间段已送药标志位
+					break;
+				}
+			}
+			xSemaphoreGiveFromISR(motor_semphr,&xHigherPriorityTaskWoken);	 		  // 给电机任务发送信号量,开始送药
+		}
+		memset(uart_buffer_6,0,sizeof(uart_buffer_6));
+//		uart_flag = 6;
+//		xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
 		HAL_UARTEx_ReceiveToIdle_DMA(&huart6,uart_buffer_6,19);
 		__HAL_DMA_DISABLE_IT(&hdma_usart6_rx,DMA_IT_HT);
 	}
-	if(huart == &huart3)
+	if(huart == &huart3)	//ESP8266
 	{
-		
 		if(esp8266_flag == 1 && login_flag == 0)
 		{
 			esp8266_cnt = strlen(esp8266_buf);
 			//printf("%d-buf:%s",esp8266_cnt,esp8266_buf);
 			if(esp8266_cnt == 6 || esp8266_cnt == 9)		
 			{
-				ESP8266_Clear();
+					ESP8266_Clear();
 			}			
 			//上发温湿度数据会返回OK或ERROR,打印调试发现长度为6或9,会影响json数据解析故特殊处理
 			if(esp8266_cnt == 219)		//设置服药时间
 			{
 					uart_flag = 3;
-					//printf("in\r\n");
 					xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
 			} 
+			if(esp8266_cnt == 205)		//设置服药数量
+			{
+					uart_flag = 3;
+					xSemaphoreGiveFromISR(uart_semphr,&xHigherPriorityTaskWoken);
+			}
 		}	
 		if(esp8266_flag == 0 || login_flag == 1)
 		{
