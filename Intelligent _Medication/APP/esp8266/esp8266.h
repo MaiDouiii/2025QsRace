@@ -19,6 +19,7 @@ void ESP8266_UPDataNum(char * buf,const char * pack,const char * Device,int num)
 void ESP8266_UPDataStr(char * buf,const char * pack,const char * Device,char * str);//上报字符数据
 
 void Usart_SendString(UART_HandleTypeDef *huart,  unsigned char *str,uint16_t Size);
+
 _Bool ESP8266_WaitRecive(void);
 
 #endif

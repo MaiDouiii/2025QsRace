@@ -137,6 +137,12 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN StartDefaultTask */
+	res = f_mount(&my_fs,"0",1);
+	if(res != FR_OK)
+		printf("FS ERROR!-%d\r\n",res);
+	else
+		printf("success!\r\n");
+
   while (1)
   {
     HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);

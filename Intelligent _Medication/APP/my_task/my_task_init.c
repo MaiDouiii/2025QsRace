@@ -25,12 +25,12 @@ TaskHandle_t motor_handler;
 void uart_task(void *params);
 TaskHandle_t uart_handler;
 #define uart_priority 12
-#define uart_stack_size 384
+#define uart_stack_size 256	//384
 
 void check_task(void *params);
 TaskHandle_t check_handler;
 #define check_priority 6
-#define check_stack_size 128
+#define check_stack_size 512
 
 void all_task_init()
 {
@@ -46,6 +46,8 @@ void all_task_init()
 	lv_label_set_text_fmt(ui_DataLabel, "%d/%d/%d   Day%d", GetData.Year, GetData.Month, GetData.Date, GetData.WeekDay);
 	lv_label_set_text_fmt(ui_TimeLabel, "%02d:%02d:%02d", GetTime.Hours, GetTime.Minutes, GetTime.Seconds);
 	lv_timer_create(timer_cb, 200, NULL);
+	
+
 	// 更新一次时间防止首次上电显示错误
 
 	xTaskCreate(lvgl_task,

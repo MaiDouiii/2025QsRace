@@ -127,6 +127,8 @@ void ESP8266_UPDataNum(char *buf, const char *pack, const char *Device, int num)
 
 void ESP8266_UPDataStr(char *buf, const char *pack, const char *Device, char *str) // ·¢˝ז·û
 {
+	memset(buf,0,sizeof((const char *)buf));
 	sprintf(buf, pack, Device, str);
 	Usart_SendString(&huart3, (unsigned char *)buf, strlen(buf));
+	delay_ms(200);
 }

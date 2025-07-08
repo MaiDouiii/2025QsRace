@@ -1,0 +1,9 @@
+intelligent _medication\qrcodegen.o: ..\APP\LVGL\GUI\lvgl\src\extra\libs\qrcode\qrcodegen.c
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+intelligent _medication\qrcodegen.o: ..\APP\LVGL\GUI\lvgl\src\extra\libs\qrcode\qrcodegen.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\qrcodegen.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

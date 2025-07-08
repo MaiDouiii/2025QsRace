@@ -1,0 +1,15 @@
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
+intelligent _medication\timers.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+intelligent _medication\timers.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+intelligent _medication\timers.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+intelligent _medication\timers.o: ../Core/Inc/FreeRTOSConfig.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+intelligent _medication\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h

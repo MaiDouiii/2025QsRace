@@ -56,6 +56,8 @@ extern char wifi_name[20];
 extern char wifi_pass[20];
 
 extern const char *ESP8266_Send1;
+extern const char *ESP8266_Send2;
+
 extern unsigned short esp8266_cnt;
 extern uint8_t esp8266_flag;
 extern uint8_t uart_flag;
@@ -68,5 +70,7 @@ extern uint8_t login_flag;
 extern uint8_t eat_flag;
 extern uint8_t Race_Flag;
 extern uint8_t Race_Id;
+extern FATFS my_fs;
+extern FRESULT res;
 
 #endif

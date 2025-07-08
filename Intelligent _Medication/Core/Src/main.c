@@ -52,6 +52,7 @@
 
 /* USER CODE BEGIN PV */
 FATFS my_fs;
+FRESULT res;
 uint8_t temp,humi;
 /* USER CODE END PV */
 
@@ -125,11 +126,7 @@ int main(void)
 					}
 			}
 	}
-//	if(f_mount(&my_fs,"0",1) != FR_OK)
-//	{
-//		printf("FS ERROR!\r\n");
-//	}
-		//f_open
+
   motor_init();
 	
 	HAL_UARTEx_ReceiveToIdle_DMA(&huart3, (uint8_t *)esp8266_buf, 299);

@@ -2253,11 +2253,6 @@
               <FilePath>..\APP\Ring_Buff\driver_ring.c</FilePath>
             </File>
             <File>
-              <FileName>SDcard.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APP\SDcard\SDcard.c</FilePath>
-            </File>
-            <File>
               <FileName>iic.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\AT24C02\iic.c</FilePath>
