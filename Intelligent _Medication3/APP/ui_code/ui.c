@@ -744,14 +744,13 @@ void ui_event_set(lv_event_t *e)
         eatGet(user_messages[0].medicine[0], lv_textarea_get_text(ui_User1eat1));
         eatGet(user_messages[0].medicine[1], lv_textarea_get_text(ui_User1eat2));
         eatGet(user_messages[0].medicine[2], lv_textarea_get_text(ui_User1eat3));
-
-        for (int i = 0; i < 3; i++)
-        {
-            printf("%d %d\r\n", user_messages[0].Time[i][0], user_messages[0].Time[i][1]);
-            printf("%d %d %d %d %d %d\r\n", user_messages[0].medicine[i][0], user_messages[0].medicine[i][1], user_messages[0].medicine[i][2], user_messages[0].medicine[i][3], user_messages[0].medicine[i][4], user_messages[0].medicine[i][5]);
-        }
+        //        for (int i = 0; i < 3; i++)
+        //        {
+        //            printf("%d %d\r\n", user_messages[0].Time[i][0], user_messages[0].Time[i][1]);
+        //            printf("%d %d %d %d %d %d\r\n", user_messages[0].medicine[i][0], user_messages[0].medicine[i][1], user_messages[0].medicine[i][2], user_messages[0].medicine[i][3], user_messages[0].medicine[i][4], user_messages[0].medicine[i][5]);
+        //        }
     }
-    if (target == ui_User2Set)
+    else if (target == ui_User2Set)
     {
         timeGet(user_messages[1].Time[0], lv_textarea_get_text(ui_User2Time1));
         timeGet(user_messages[1].Time[1], lv_textarea_get_text(ui_User2Time2));
@@ -760,7 +759,7 @@ void ui_event_set(lv_event_t *e)
         eatGet(user_messages[1].medicine[1], lv_textarea_get_text(ui_User2eat2));
         eatGet(user_messages[1].medicine[2], lv_textarea_get_text(ui_User2eat3));
     }
-    if (target == ui_User3Set)
+    else if (target == ui_User3Set)
     {
         timeGet(user_messages[2].Time[0], lv_textarea_get_text(ui_User3Time1));
         timeGet(user_messages[2].Time[1], lv_textarea_get_text(ui_User3Time2));
@@ -768,6 +767,25 @@ void ui_event_set(lv_event_t *e)
         eatGet(user_messages[2].medicine[0], lv_textarea_get_text(ui_User3eat1));
         eatGet(user_messages[2].medicine[1], lv_textarea_get_text(ui_User3eat2));
         eatGet(user_messages[2].medicine[2], lv_textarea_get_text(ui_User3eat3));
+    }
+    else if (target == ui_user1take)
+    {
+        now_user = 0;
+        xSemaphoreGive(motor_semphr);
+    }
+    else if (target == ui_user2take)
+    {
+        now_user = 1;
+        xSemaphoreGive(motor_semphr);
+    }
+    else if (target == ui_user3take)
+    {
+        now_user = 2;
+        xSemaphoreGive(motor_semphr);
+    }
+    else if (target == ui_SaveSetting)
+    {
+        // Save settings to flash or EEPROM
     }
 }
 

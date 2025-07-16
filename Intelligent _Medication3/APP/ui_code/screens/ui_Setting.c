@@ -472,4 +472,9 @@ void ui_Setting_screen_init(void)
     lv_obj_add_event_cb(ui_User1Set, ui_event_set, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(ui_User2Set, ui_event_set, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(ui_User3Set, ui_event_set, LV_EVENT_CLICKED, NULL);
+		lv_obj_add_event_cb(ui_user1take, ui_event_set, LV_EVENT_CLICKED, NULL);
+		lv_obj_add_event_cb(ui_user2take, ui_event_set, LV_EVENT_CLICKED, NULL);
+		lv_obj_add_event_cb(ui_user3take, ui_event_set, LV_EVENT_CLICKED, NULL);
+		lv_obj_add_event_cb(ui_SaveSetting, ui_event_set, LV_EVENT_CLICKED, NULL);
+		
 }

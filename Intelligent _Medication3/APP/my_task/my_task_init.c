@@ -9,7 +9,7 @@ TaskHandle_t lvgl_handler;
 
 void key_task(void *params);
 TaskHandle_t key_handler;
-#define key_priority 7
+#define key_priority 7		//7
 #define key_stack_size 128
 
 void rtc_task(void *params);
